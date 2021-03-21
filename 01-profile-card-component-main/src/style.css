@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-white: #fff;
+  --primar-dark-cyan: hsl(185, 75%, 39%);
+  --primary-dark-blue: hsl(229, 23%, 23%);
+  --primary-dark-grayBlue: hsl(227, 10%, 46%);
+  --secondary-dark-gray: hsl(0, 0%, 59%);
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+.container {
+  z-index: 0;
+  background: var(--primar-dark-cyan);
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pattern {
+  z-index: -1;
+  position: absolute;
+}
+
+.pattern-top {
+  top: -500px;
+  left: -300px;
+}
+
+.pattern-bottom {
+  bottom: -600px;
+  right: -200px;
+}
+
+.card-container {
+  z-index: 10;
+  height: 60vh;
+  font-size: 18px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 1fr 3fr 2fr;
+  grid-auto-columns: 100%;
+  color: var(--secondary-dark-gray);
+}
+
+.bg-pattern-card img {
+  width: 100%;
+  height: 100%;
+}
+
+.person-details {
+  background: var(--primary-white);
+  color: var(--primary-dark-grayBlue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.25rem;
+  padding: 3rem;
+  position: relative;
+}
+
+.person-details img {
+  position: absolute;
+  border: 4px solid var(--primary-white);
+  border-radius: 50%;
+  top: -25%;
+}
+
+.social-info {
+  border-top: 1px solid var(--secondary-dark-gray);
+  background: var(--primary-white);
+  display: flex;
+  gap: 1rem;
+  padding: 0 2rem;
+}
+
+.social-info > * {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.person-details .name,
+.social-info .value {
+  color: var(--primary-dark-blue);
+  font-weight: 700;
+}
+
+.info-font {
+  letter-spacing: 0.15rem;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 375px) {
+  .container {
+    overflow: scroll;
+  }
+  .card-container {
+    min-width: 300px;
+  }
+  .pattern {
+    height: 50%;
+    width: 50%;
+  }
+  .pattern-top {
+    top: -100%;
+    left: -180%;
+  }
+
+  .pattern-bottom {
+    bottom: 10%;
+    right: 20%;
+  }
+
+  .card-container {
+    width: 80%;
+  }
+
+  .person-details img {
+    top: -35%;
+  }
+}
