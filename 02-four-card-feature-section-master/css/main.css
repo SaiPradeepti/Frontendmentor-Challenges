@@ -8,16 +8,115 @@
   font-family: "Poppins", sans-serif;
 }
 
+body {
+  font-size: 15px;
+}
+
+.content, .container .header__content, .card__content {
+  font-size: 15px;
+  margin: 1rem auto;
+  color: #a3a5ae;
+}
+
 .container {
   height: 100vh;
 }
 
 .container .header {
   text-align: center;
-  margin-top: 4rem;
+  margin-top: 2rem;
+  font-size: 20px;
 }
 
-.container .header .container .header__title {
-  font-size: 45px;
+.container .header__title {
+  font-weight: 200;
+}
+
+.container .header__subtitle {
+  font-weight: 600;
+}
+
+.container .header__content {
+  width: 35%;
+}
+
+@media (max-width: 375px) {
+  .container .header__content {
+    width: 90%;
+  }
+}
+
+@media (max-width: 375px) {
+  .container .header {
+    font-size: 1.5rem;
+  }
+}
+
+.card-container {
+  width: 100%;
+  height: 60vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 3rem;
+}
+
+.card-container .card__col2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (max-width: 375px) {
+  .card-container {
+    display: block;
+    height: auto;
+    padding-bottom: 3rem;
+  }
+}
+
+.card, .card__green, .card__red, .card__yellow, .card__blue {
+  -webkit-box-shadow: 0px 9px 30px -3px rgba(0, 0, 0, 0.23);
+          box-shadow: 0px 9px 30px -3px rgba(0, 0, 0, 0.23);
+  height: 220px;
+  width: 300px;
+  margin: 1.5rem;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.card__green {
+  border-top: 4px solid #45d3d3;
+}
+
+.card__red {
+  border-top: 4px solid #ea5353;
+}
+
+.card__yellow {
+  border-top: 4px solid #fcaf4a;
+}
+
+.card__blue {
+  border-top: 4px solid #549ef2;
+}
+
+.card__title {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.card__icon {
+  text-align: right;
 }
 /*# sourceMappingURL=main.css.map */

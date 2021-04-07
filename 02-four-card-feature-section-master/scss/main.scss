@@ -1,18 +1,91 @@
 @import "./config";
 
-@function fontSize($size) {
-  @return map-get($font-sizes, $size);
-}
-
 .container {
   height: 100vh;
 
   .header {
     text-align: center;
-    margin-top: 4rem;
+    margin-top: 2rem;
+    font-size: fontSize(large);
 
-    #{&}__title {
-      font-size: fontSize(large);
+    &__title {
+      font-weight: fontWeight(thin);
+    }
+
+    &__subtitle {
+      font-weight: fontWeight(bold);
+    }
+
+    &__content {
+      @extend.content;
+      width: 35%;
+
+      @include mobile {
+        width: 90%;
+      }
+    }
+
+    @include mobile {
+      font-size: 1.5rem;
     }
   }
+}
+
+.card-container {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+
+  .card__col2 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include mobile {
+    display: block;
+    height: auto;
+    padding-bottom: 3rem;
+  }
+}
+
+.card {
+  box-shadow: 0px 9px 30px -3px rgba(0, 0, 0, 0.23);
+  height: 220px;
+  width: 300px;
+  margin: 1.5rem;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.card__green {
+  @extend .card;
+  border-top: 4px solid $clr-green;
+}
+.card__red {
+  @extend .card;
+  border-top: 4px solid $clr-red;
+}
+.card__yellow {
+  @extend .card;
+  border-top: 4px solid $clr-yellow;
+}
+.card__blue {
+  @extend .card;
+  border-top: 4px solid $clr-blue;
+}
+
+.card__title {
+  font-weight: fontWeight(bold);
+  font-size: fontSize(large);
+}
+
+.card__content {
+  @extend .content;
+}
+
+.card__icon {
+  text-align: right;
 }

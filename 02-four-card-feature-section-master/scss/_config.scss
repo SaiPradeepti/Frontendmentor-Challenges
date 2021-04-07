@@ -19,9 +19,13 @@ $mobile: 375px;
   font-family: "Poppins", sans-serif;
 }
 
+body {
+  font-size: 15px;
+}
+
 $font-weights: (
-  regular: 200,
-  medium: 400,
+  thin: 200,
+  regular: 400,
   bold: 600,
 );
 
@@ -30,12 +34,24 @@ $font-weights: (
 }
 
 $font-sizes: (
-  regular: 15px,
-  medium: 30px,
-  large: 45px,
-  extraLarge: 100px,
+  regular: 10px,
+  medium: 15px,
+  large: 20px,
+  extraLarge: 50px,
 );
 
 @function fontSize($size) {
   @return map-get($font-sizes, $size);
+}
+
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+
+.content {
+  font-size: fontSize(medium);
+  margin: 1rem auto;
+  color: $clr-grayish-blue;
 }
