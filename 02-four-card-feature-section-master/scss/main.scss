@@ -1,0 +1,18 @@
+@import "./config";
+
+@function fontSize($size) {
+  @return map-get($font-sizes, $size);
+}
+
+.container {
+  height: 100vh;
+
+  .header {
+    text-align: center;
+    margin-top: 4rem;
+
+    #{&}__title {
+      font-size: fontSize(large);
+    }
+  }
+}

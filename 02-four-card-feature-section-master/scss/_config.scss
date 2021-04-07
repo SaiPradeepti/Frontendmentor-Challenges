@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+$clr-red: hsl(0, 78%, 62%);
+$clr-green: hsl(180, 62%, 55%);
+$clr-yellow: hsl(34, 97%, 64%);
+$clr-blue: hsl(212, 86%, 64%);
+
+$clr-dark-blue: hsl(234, 12%, 34%);
+$clr-grayish-blue: hsl(229, 6%, 66%);
+$clr-light-gray: hsl(0, 0%, 98%);
+
+$mobile: 375px;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: $clr-dark-blue;
+  font-family: "Poppins", sans-serif;
+}
+
+$font-weights: (
+  regular: 200,
+  medium: 400,
+  bold: 600,
+);
+
+@function fontWeight($weight) {
+  @return map-get($font-weights, $weight);
+}
+
+$font-sizes: (
+  regular: 15px,
+  medium: 30px,
+  large: 45px,
+  extraLarge: 100px,
+);
+
+@function fontSize($size) {
+  @return map-get($font-sizes, $size);
+}
