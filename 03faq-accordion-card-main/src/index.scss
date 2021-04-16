@@ -1,16 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
 
-*,
-::after,
-::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-size: 12px;
-  font-family: "Kumbh Sans", sans-serif;
-}
-
 $mobile: 375px;
+$clr-white: #fff;
 $clr-text-veryDarkBlue: hsl(238, 29%, 16%);
 $clr-text-softRed: hsl(14, 88%, 65%);
 $clr-text-darkGrayishBlue: hsl(237, 12%, 33%);
@@ -24,7 +15,119 @@ $clr-divider-lightGrayishBlue: hsl(240, 5%, 91%);
 $font-weight-regular: 400;
 $font-weight-bold: 700;
 
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
 body {
   height: 100vh;
+  // max-height: max-content;
   background: linear-gradient(to bottom, #af67e9, #6565e7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  // margin: 4rem auto;
+  background: $clr-white;
+  display: flex;
+  height: 70vh;
+  width: 70vw;
+  // height: auto;
+  position: relative;
+  border-radius: 30px;
+
+  .svg__container {
+    height: 100%;
+    width: 50%;
+    overflow: hidden;
+    position: relative;
+
+    .bg {
+      transform: translate(-60%, -30%);
+    }
+
+    .woman {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(-15%, 20%);
+    }
+  }
+
+  .svg__box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, 115%);
+  }
+
+  .faq {
+    width: 60%;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.faq__container {
+  height: 80%;
+  width: 80%;
+  padding: 1rem;
+
+  .faq__title {
+    font-size: 2rem;
+    font-weight: $font-weight-bold;
+  }
+
+  .faq__list {
+    margin-top: 2rem;
+  }
+}
+
+.qna {
+  padding-bottom: 1rem;
+
+  #{&}__question {
+    font-size: 1.2rem;
+    font-weight: $font-weight-bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .question {
+      color: $clr-text-GrayishBlue;
+    }
+
+    .boldColor {
+      color: $clr-text-veryDarkBlue;
+    }
+
+    .arrow {
+      cursor: pointer;
+    }
+
+    .arrow-down {
+      transform: rotate(180deg);
+    }
+  }
+
+  #{&}__answer {
+    color: $clr-text-GrayishBlue;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+  }
+
+  #{&}__divider {
+    height: 1px;
+    width: 100%;
+    background: $clr-divider-lightGrayishBlue;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
 }
