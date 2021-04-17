@@ -22,11 +22,11 @@ Users should be able to:
 
 - Desktop View
 
-![](./img/Capture1.PNG)
+![](./src/img/Capture1.PNG)
 
 - Mobile View
 
-![](./img/Capture1.PNG)
+![](./src/img/Capture1.PNG)
 
 ### Links
 
