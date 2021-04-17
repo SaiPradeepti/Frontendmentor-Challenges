@@ -26,7 +26,7 @@ Users should be able to:
 
 - Mobile View
 
-![](./src/img/Capture1.PNG)
+![](./src/img/Capture2.PNG)
 
 ### Links
 
