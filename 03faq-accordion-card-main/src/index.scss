@@ -93,7 +93,7 @@ body {
 .faq__container {
   height: 80%;
   width: 80%;
-  padding: 1rem;
+  padding: 3rem;
 
   .faq__title {
     font-size: 2rem;
@@ -132,6 +132,10 @@ body {
 
     .boldColor {
       color: $clr-text-veryDarkBlue;
+    }
+
+    .btn__arrow:hover {
+      transform: scale(1.2);
     }
 
     .arrow {
