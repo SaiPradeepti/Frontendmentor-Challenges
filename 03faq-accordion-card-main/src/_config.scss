@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+$mobile: 375px;
+$clr-white: #fff;
+$clr-text-veryDarkBlue: hsl(238, 29%, 16%);
+$clr-text-softRed: hsl(14, 88%, 65%);
+$clr-text-darkGrayishBlue: hsl(237, 12%, 33%);
+$clr-text-GrayishBlue: hsl(240, 6%, 50%);
+
+$clr-bg-softViolet: hsl(273, 75%, 66%);
+$clr-bg-softBlue: hsl(240, 73%, 65%);
+
+$clr-divider-lightGrayishBlue: hsl(240, 5%, 91%);
+
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Kumbh Sans", sans-serif;
+}

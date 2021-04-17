@@ -10,12 +10,7 @@ const Qna = ({id,question,answer}) => {
                 <div className={showAnswer ? 'question boldColor' : 'question'}>
                     {question}
                 </div>
-                <img src={arrow} className={showAnswer? 'arrow arrow-down' : 'arrow'} onClick={()=>{
-                    setShowAnswer(!showAnswer);
-                    // activeIndex = id;
-                    // console.log(activeIndex)
-                }
-                } alt="arrow"/>
+                <img src={arrow} className={showAnswer? 'arrow arrow-down' : 'arrow'} onClick={()=>setShowAnswer(!showAnswer)} alt="arrow"/>
             </div>
             <div className="qna__answer">
                 { showAnswer && answer }

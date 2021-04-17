@@ -1,78 +1,92 @@
-@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
-
-$mobile: 375px;
-$clr-white: #fff;
-$clr-text-veryDarkBlue: hsl(238, 29%, 16%);
-$clr-text-softRed: hsl(14, 88%, 65%);
-$clr-text-darkGrayishBlue: hsl(237, 12%, 33%);
-$clr-text-GrayishBlue: hsl(240, 6%, 50%);
-
-$clr-bg-softViolet: hsl(273, 75%, 66%);
-$clr-bg-softBlue: hsl(240, 73%, 65%);
-
-$clr-divider-lightGrayishBlue: hsl(240, 5%, 91%);
-
-$font-weight-regular: 400;
-$font-weight-bold: 700;
-
-*,
-::after,
-::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Kumbh Sans", sans-serif;
-}
+@import "./config";
 
 body {
-  min-height: 100vh;
-  // max-height: max-content;
+  height: 100vh;
   background: linear-gradient(to bottom, #af67e9, #6565e7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+  @media screen and (max-width: 1024px) {
+    height: auto;
+  }
 }
 
 .container {
-  margin: 4rem auto;
+  margin: 8rem auto;
+  box-shadow: -1px 14px 44px 0px rgba(0, 0, 0, 0.42);
   background: $clr-white;
   display: flex;
-  height: 70vh;
-  max-height: auto;
-  // height: auto;
-  width: 70vw;
+  height: auto;
+  width: 65vw;
   position: relative;
   border-radius: 30px;
 
   .svg__container {
-    height: 100%;
     width: 50%;
     overflow: hidden;
-    position: relative;
+    background: url(./img/desktop.svg);
+    background-size: 150%;
+    background-repeat: no-repeat;
+    background-position: 70% 65%;
 
-    .bg {
-      transform: translate(-60%, -30%);
+    .mobileSvg {
+      display: none;
+
+      @media screen and (max-width: 1024px) {
+        display: block;
+        height: 150%;
+        transform: translateY(-40%);
+      }
+
+      @media screen and (max-width: 480px) {
+        height: 130%;
+      }
     }
 
-    .woman {
-      position: absolute;
-      top: 0;
-      left: 0;
-      transform: translate(-15%, 20%);
+    @media screen and (max-width: 1024px) {
+      width: 100%;
+      height: 200px;
+      overflow: visible;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      background: none;
+    }
+
+    @media screen and (max-width: 480px) {
+      height: 150px;
     }
   }
 
   .svg__box {
     position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(-50%, 115%);
+    top: 35%;
+    left: -8%;
+    animation: animateBox 2.5s ease-in-out infinite;
+
+    @media screen and (max-width: 1024px) {
+      display: none;
+    }
   }
 
   .faq {
     width: 60%;
     display: flex;
     align-items: center;
+    padding-bottom: 3rem;
+
+    @media screen and (max-width: 1024px) {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+    height: auto;
+    width: 80vw;
+    margin: 11rem auto;
+  }
+  @media screen and (max-width: 480px) {
+    margin: 8rem auto;
   }
 }
 
@@ -84,10 +98,17 @@ body {
   .faq__title {
     font-size: 2rem;
     font-weight: $font-weight-bold;
+
+    @media screen and (max-width: 1024px) {
+      text-align: center;
+    }
   }
 
   .faq__list {
     margin-top: 2rem;
+  }
+  @media screen and (max-width: 480px) {
+    padding: 0rem;
   }
 }
 
@@ -103,6 +124,10 @@ body {
 
     .question {
       color: $clr-text-GrayishBlue;
+
+      @media screen and (max-width: 480px) {
+        font-size: 1rem;
+      }
     }
 
     .boldColor {
@@ -130,5 +155,17 @@ body {
     background: $clr-divider-lightGrayishBlue;
     margin-top: 1rem;
     margin-bottom: 0.5rem;
+  }
+}
+
+@keyframes animateBox {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
