@@ -1,0 +1,10 @@
+@import "./config";
+
+@mixin jobDetailsBtn($clr) {
+  font-size: 0.75rem;
+  color: $clr-white;
+  background: $clr;
+  font-weight: $fontweight-bold;
+  padding: 0.5rem;
+  border-radius: 15px;
+}

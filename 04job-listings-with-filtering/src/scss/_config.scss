@@ -1,7 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap");
+
 *,
 ::after,
 ::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
+}
+
+$mobile: 375px;
+$desktop: 1440px;
+
+$clr-desaturated-dark-cyan: hsl(180, 29%, 50%);
+$clr-bg-light-grayish-cyan: hsl(180, 52%, 96%);
+$clr-light-grayish-cyan: hsl(180, 31%, 95%); //Filter Tablets
+$clr-dark-grayish-cyan: hsl(180, 8%, 52%);
+$clr-very-dark-grayish-cyan: hsl(180, 14%, 20%);
+$clr-white: #fff;
+
+$fontweight-medium: 500;
+$fontweight-bold: 700;
+
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin shadow {
+  box-shadow: 0 1.5rem 2rem -0.5rem rgba(91, 164, 164, 0.25);
 }

@@ -1,0 +1,118 @@
+@import "./scss/config";
+@import "./scss/btn";
+
+body {
+  background: $clr-bg-light-grayish-cyan;
+}
+
+.main {
+  background: $clr-bg-light-grayish-cyan;
+
+  #{&}__bg {
+    height: 20vh;
+    background: $clr-desaturated-dark-cyan;
+    background-image: url(./images/bg-header-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+
+    @include mobile {
+      background-image: url(./images/bg-header-mobile.svg);
+    }
+  }
+}
+
+.job__listing {
+  width: 80%;
+  margin: 4rem auto;
+}
+
+.job {
+  @include shadow;
+  border-radius: 5px;
+  background: $clr-white;
+  height: 21vh;
+  display: grid;
+  grid-template-columns: 0.5fr 3fr 3fr;
+  padding: 1rem 2rem;
+
+  &:not(:nth-of-type(1)) {
+    margin-top: 2rem;
+  }
+
+  #{&}__logo {
+    background: url(./images/photosnap.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  #{&}__details {
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .row1 {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+
+      .company__name {
+        color: $clr-desaturated-dark-cyan;
+        font-weight: $fontweight-bold;
+      }
+
+      .job__newpost {
+        @include jobDetailsBtn($clr-desaturated-dark-cyan);
+      }
+
+      .job__featured {
+        @include jobDetailsBtn($clr-very-dark-grayish-cyan);
+      }
+    }
+
+    .row2 {
+      .job__position {
+        font-size: 1.1rem;
+        color: $clr-very-dark-grayish-cyan;
+        font-weight: $fontweight-bold;
+      }
+    }
+
+    .row3 {
+      display: flex;
+      gap: 1rem;
+      color: $clr-dark-grayish-cyan;
+      font-weight: $fontweight-medium;
+
+      .job__postedAt {
+      }
+
+      .job__contract {
+      }
+
+      .job__location {
+      }
+    }
+  }
+
+  #{&}__tags {
+    // border: 1px solid pink;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+
+    .tag {
+      font-weight: $fontweight-bold;
+      color: $clr-desaturated-dark-cyan;
+      background: $clr-light-grayish-cyan;
+      padding: 0.5rem 0.8rem;
+      border-radius: 5px;
+    }
+  }
+}
+
+.job__border {
+  border-left: 5px solid $clr-desaturated-dark-cyan;
+}
