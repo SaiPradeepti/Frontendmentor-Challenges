@@ -8,3 +8,19 @@
   padding: 0.5rem;
   border-radius: 15px;
 }
+
+@mixin tagBtn {
+  font-size: 0.8rem;
+  font-weight: $fontweight-bold;
+  color: $clr-desaturated-dark-cyan;
+  background: $clr-light-grayish-cyan;
+  padding: 0.5rem 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+
+@mixin bgCyan {
+  color: $clr-white;
+  background: $clr-desaturated-dark-cyan;
+}

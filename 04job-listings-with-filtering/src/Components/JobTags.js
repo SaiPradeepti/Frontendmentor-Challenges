@@ -1,6 +1,6 @@
 import React from 'react'
 
-const JobTags = ({role,level,languages,tools}) => {
+const JobTags = ({role,level,languages,tools,openFilterBar}) => {
     const tags = [role,level,...languages,...tools];
 
     return (
@@ -8,9 +8,9 @@ const JobTags = ({role,level,languages,tools}) => {
             {
                 tags.map((item,index) => {
                     return (
-                        <div key={index} className="tag">
+                        <div key={index} className="tag" onClick={()=>openFilterBar(item)}>
                             {item}
-                        </div>
+                        </div>                        
                     )
                 })
             }

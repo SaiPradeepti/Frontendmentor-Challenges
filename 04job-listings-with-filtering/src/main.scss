@@ -24,13 +24,12 @@ body {
 
 .job__listing {
   width: 75%;
-  margin: 4rem auto;
+  margin: 5rem auto;
+  position: relative;
 }
 
 .job {
-  @include shadow;
-  border-radius: 5px;
-  background: $clr-white;
+  @include card;
   height: 21vh;
   display: grid;
   grid-template-columns: 1fr 3fr 3fr;
@@ -41,9 +40,6 @@ body {
   }
 
   #{&}__logo {
-    // background: url(./images/photosnap.svg);
-    background-repeat: no-repeat;
-    background-position: center center;
   }
 
   #{&}__details {
@@ -104,18 +100,10 @@ body {
     gap: 1rem;
 
     .tag {
-      font-size: 0.8rem;
-      font-weight: $fontweight-bold;
-      color: $clr-desaturated-dark-cyan;
-      background: $clr-light-grayish-cyan;
-      padding: 0.5rem 0.8rem;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: all 300ms ease;
+      @include tagBtn;
 
       &:hover {
-        color: $clr-white;
-        background: $clr-desaturated-dark-cyan;
+        @include bgCyan;
       }
     }
   }
@@ -123,4 +111,72 @@ body {
 
 .job__border {
   border-left: 5px solid $clr-desaturated-dark-cyan;
+}
+
+.filterBar {
+  position: absolute;
+  top: -22%;
+  left: 0;
+  width: 100%;
+  // margin: auto;
+  // transform: translateY(-35%);
+  // margin: 5rem auto;
+  display: flex;
+  justify-content: space-between;
+  @include card;
+  padding: 1.5rem 2.5rem;
+
+  .tags__container {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .clear__btn {
+    font-size: 0.9rem;
+    font-weight: $fontweight-bold;
+    cursor: pointer;
+    color: lighten($clr-very-dark-grayish-cyan, 20%);
+    transition: all 300ms ease;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 0.1rem;
+      background: #5ba4a4;
+      transition: all 300ms ease;
+    }
+
+    &:hover {
+      color: $clr-desaturated-dark-cyan;
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.tag__btn {
+  @include tagBtn;
+  padding: 0;
+  display: flex;
+  align-items: center;
+
+  .tag__text {
+    padding: 0.3rem;
+  }
+
+  .tag__icon {
+    font-size: 1rem;
+    @include bgCyan;
+    padding: 0.3rem;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transition: all 300ms ease;
+
+    &:hover {
+      background: $clr-very-dark-grayish-cyan;
+    }
+  }
 }

@@ -28,6 +28,8 @@ $fontweight-bold: 700;
   }
 }
 
-@mixin shadow {
+@mixin card {
   box-shadow: 0 1.5rem 2rem -0.5rem rgba(91, 164, 164, 0.25);
+  border-radius: 5px;
+  background: $clr-white;
 }
