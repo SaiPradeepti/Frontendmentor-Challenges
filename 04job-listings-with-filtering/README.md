@@ -28,12 +28,10 @@ Users should be able to:
 
 <table>
   <tr>
-    <td> <img src="./src/images/Capture1.PNG" alt="drawing" width="800"/></td>
+    <td> <img src="./src/images/Capture1.PNG" alt="drawing"/></td>
     <td> <img src="./src/images/Capture3.PNG" alt="drawing"/> </td>   
   </tr>
 </table>
-
-<img src="./src/images/Capture1.PNG" alt="drawing" width="800"/>
 
 #### Mobile View
 
