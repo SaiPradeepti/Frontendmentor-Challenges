@@ -1,9 +1,11 @@
 @import "./scss/config";
 @import "./scss/btn";
 
-.main {
+body {
   background: $clr-bg-light-grayish-cyan;
+}
 
+.main {
   #{&}__bg {
     height: 20vh;
     background: $clr-desaturated-dark-cyan;
@@ -184,8 +186,7 @@
     gap: 1rem;
 
     @include responsive(900px) {
-      flex-wrap: wrap;
-      gap: 1rem;
+      overflow-x: auto;
     }
   }
 
@@ -215,13 +216,13 @@
   }
 
   @include responsive(900px) {
-    top: -220px;
+    top: -180px;
     flex-wrap: wrap;
     gap: 1rem;
   }
 
   @include responsive(480px) {
-    flex-wrap: nowrap;
+    // flex-wrap: nowrap;
   }
 }
 
@@ -249,6 +250,6 @@
   }
 
   @include responsive(480px) {
-    font-size: 0.6rem;
+    // font-size: 0.6rem;
   }
 }

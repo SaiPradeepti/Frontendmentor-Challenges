@@ -22,7 +22,6 @@ const JobListing = () => {
             })
         }
         else{
-            console.log('JHkjd')
             setDisplayJobs(data)
         }
     }, [filterTags])

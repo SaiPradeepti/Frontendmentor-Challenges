@@ -10,7 +10,7 @@ const JobTags = ({role,level,languages,tools,openFilterBar}) => {
                     return (
                         <div key={index} className="tag" onClick={()=>openFilterBar(item)}>
                             {item}
-                        </div>                        
+                        </div>      
                     )
                 })
             }

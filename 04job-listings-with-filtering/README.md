@@ -26,13 +26,15 @@ Users should be able to:
 
 #### Desktop View
 
-![](./src/images/Capture1.PNG)
+![](./src/images/Capture1.PNG =700x400)
 
 #### Mobile View
 
-![](./src/images/Capture2.PNG)
+![](./src/images/Capture2.PNG =400x800)
 
-![](./src/images/Capture3.PNG)
+![](./src/images/Capture3.PNG =400x800)
+
+![](./src/images/Capture4.PNG =400x800)
 
 ### Links
 
@@ -49,6 +51,7 @@ Users should be able to:
 - CSS Grid
 - [React](https://reactjs.org/) - JS library
 - [React-Icons](https://react-icons.github.io/react-icons/)
+- [React Reveal](https://www.react-reveal.com/) - Animation Framework for React
 
 ## Author
 
