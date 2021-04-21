@@ -27,6 +27,7 @@ Users should be able to:
 #### Desktop View
 
 ![](./src/images/Capture1.PNG =700x400)
+<img src="./src/images/Capture1.PNG" alt="drawing" width="700"/>
 
 #### Mobile View
 
