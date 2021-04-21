@@ -203,6 +203,11 @@ body {
   .tags__container {
     display: flex;
     gap: 1rem;
+
+    @include responsive(900px) {
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
   }
 
   .clear__btn {
@@ -210,7 +215,7 @@ body {
     font-weight: $fontweight-bold;
     cursor: pointer;
     color: lighten($clr-very-dark-grayish-cyan, 20%);
-    transition: all 300ms ease;
+    transition: color 300ms ease;
 
     &::after {
       content: "";
@@ -218,7 +223,7 @@ body {
       width: 0;
       height: 0.1rem;
       background: #5ba4a4;
-      transition: all 300ms ease;
+      transition: width 300ms ease;
     }
 
     &:hover {
@@ -228,6 +233,16 @@ body {
         width: 100%;
       }
     }
+  }
+
+  @include responsive(900px) {
+    top: -220px;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  @include responsive(480px) {
+    flex-wrap: nowrap;
   }
 }
 
@@ -252,5 +267,9 @@ body {
     &:hover {
       background: $clr-very-dark-grayish-cyan;
     }
+  }
+
+  @include responsive(480px) {
+    font-size: 0.6rem;
   }
 }

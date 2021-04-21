@@ -49,8 +49,7 @@ const JobListing = () => {
         <div className='job__listing'>
         {
             showFilter && ( filterTags.length > 0 ) && <FilterBar filterTags={filterTags} closeFilterBar={closeFilterBar} updateFilterTags={updateFilterTags} />
-        }
-            
+        }            
         {
             displayJobs.map((item) => {
                 return <JobPost key={item.id} {...item} openFilterBar={openFilterBar} />
