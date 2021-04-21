@@ -30,11 +30,19 @@ Users should be able to:
 
 #### Mobile View
 
-<img src="./src/images/Capture2.PNG" alt="drawing" width="300" height="700"/>
+<table>
+  <tr>
+    <td> <img src="./src/images/Capture2.PNG" alt="drawing" width="300" height="700"/></td>
+    <td> <img src="./src/images/Capture3.PNG" alt="drawing" width="400"/> </td>
+    <td> <img src="./src/images/Capture4.PNG" alt="drawing" width="400"/> </td>   
+  </tr>
+</table>
 
-<img src="./src/images/Capture3.PNG" alt="drawing" width="400" height="600"/>
+<!-- <img src="./src/images/Capture2.PNG" alt="drawing" width="300" height="700"/> -->
 
-<img src="./src/images/Capture4.PNG" alt="drawing" width="400" height="600"/>
+<!-- <img src="./src/images/Capture3.PNG" alt="drawing" width="400" height="600"/> -->
+
+<!-- <img src="./src/images/Capture4.PNG" alt="drawing" width="400" height="600"/> -->
 
 ### Links
 
