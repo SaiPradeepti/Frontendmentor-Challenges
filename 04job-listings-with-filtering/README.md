@@ -26,16 +26,15 @@ Users should be able to:
 
 #### Desktop View
 
-![](./src/images/Capture1.PNG =700x400)
-<img src="./src/images/Capture1.PNG" alt="drawing" width="700"/>
+<img src="./src/images/Capture1.PNG" alt="drawing" width="800"/>
 
 #### Mobile View
 
-![](./src/images/Capture2.PNG =400x800)
+<img src="./src/images/Capture2.PNG" alt="drawing" width="450"/>
 
-![](./src/images/Capture3.PNG =400x800)
+<img src="./src/images/Capture3.PNG" alt="drawing" width="450"/>
 
-![](./src/images/Capture4.PNG =400x800)
+<img src="./src/images/Capture4.PNG" alt="drawing" width="450"/>
 
 ### Links
 
