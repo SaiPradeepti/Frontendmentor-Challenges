@@ -1,10 +1,6 @@
 @import "./scss/config";
 @import "./scss/btn";
 
-body {
-  background: $clr-bg-light-grayish-cyan;
-}
-
 .main {
   background: $clr-bg-light-grayish-cyan;
 
@@ -34,7 +30,6 @@ body {
 
 .job {
   @include card;
-  // height: 21vh;
   display: grid;
   align-items: center;
   grid-template-columns: 1fr 3fr 3fr;
@@ -107,15 +102,6 @@ body {
       color: $clr-dark-grayish-cyan;
       font-weight: $fontweight-medium;
 
-      .job__postedAt {
-      }
-
-      .job__contract {
-      }
-
-      .job__location {
-      }
-
       @include responsive(480px) {
         gap: 0.5rem;
       }
@@ -162,22 +148,15 @@ body {
 
   @include responsive(1200px) {
     grid-template-columns: 20% auto;
-    // height: 30vh;
   }
 
   @include responsive(900px) {
-    // height: 40vh;
     grid-template-columns: auto;
     grid-template-areas:
       "details"
       "tags";
     padding: 2rem;
-    // grid-template-rows: 1fr 1fr;
     position: relative;
-  }
-
-  @include responsive(700px) {
-    // height: 40vh;
   }
 
   @include responsive(375px) {
@@ -257,8 +236,8 @@ body {
   }
 
   .tag__icon {
-    font-size: 1rem;
     @include bgCyan;
+    font-size: 1rem;
     padding: 0.3rem;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;

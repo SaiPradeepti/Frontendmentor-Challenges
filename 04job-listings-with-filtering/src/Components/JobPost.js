@@ -8,7 +8,6 @@ const JobPost = ({id,company,logo,newpost,featured,position,role,level,postedAt,
     const jobTagsInfo = {role,level,languages,tools};
     return (
         <div className={featured ? 'job job__border' : 'job'}>
-            {/* <div className="job__logo" style={{background: `url(${logo})`,backgroundRepeat: 'no-repeat',backgroundPosition: 'center',backgroundSize: 'contain'}}> */}
             <div className="job__logo">
                 <img src={logo} alt={company}/>
             </div>
