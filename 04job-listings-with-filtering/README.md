@@ -30,7 +30,7 @@ Users should be able to:
 
 #### Mobile View
 
-<img src="./src/images/Capture2.PNG" alt="drawing" width="400" height="600"/>
+<img src="./src/images/Capture2.PNG" alt="drawing" width="300" height="700"/>
 
 <img src="./src/images/Capture3.PNG" alt="drawing" width="400" height="600"/>
 
