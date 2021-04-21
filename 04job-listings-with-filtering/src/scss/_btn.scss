@@ -1,12 +1,16 @@
 @import "./config";
 
 @mixin jobDetailsBtn($clr) {
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   color: $clr-white;
   background: $clr;
   font-weight: $fontweight-bold;
   padding: 0.5rem;
   border-radius: 15px;
+
+  @include responsive(480px) {
+    font-size: 0.6rem;
+  }
 }
 
 @mixin tagBtn {

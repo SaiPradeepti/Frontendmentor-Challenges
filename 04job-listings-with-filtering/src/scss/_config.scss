@@ -22,8 +22,8 @@ $clr-white: #fff;
 $fontweight-medium: 500;
 $fontweight-bold: 700;
 
-@mixin mobile {
-  @media (max-width: $mobile) {
+@mixin responsive($width) {
+  @media (max-width: $width) {
     @content;
   }
 }
