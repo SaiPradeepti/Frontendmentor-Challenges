@@ -26,17 +26,17 @@ Users should be able to:
 
 #### Desktop View
 
-![](./src/images/Capture1.PNG =x300)
+![](./src/images/Capture1.PNG)
 
 #### Mobile View
 
-![](./src/images/Capture2.PNG =x300)
+![](./src/images/Capture2.PNG)
 
-![](./src/images/Capture3.PNG =x300)
+![](./src/images/Capture3.PNG)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [https://github.com/SaiPradeepti/Frontendmentor-Challenges/tree/main/04job-listings-with-filtering](https://github.com/SaiPradeepti/Frontendmentor-Challenges/tree/main/04job-listings-with-filtering)
 - Live Site URL: [https://job-listings-with-filtering-04.netlify.app/](https://job-listings-with-filtering-04.netlify.app/)
 
 ## My process
