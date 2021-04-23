@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap");
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+}
+
+$mobile: 375px;
+$desktop: 1440px;
+
+$clr-blue: hsl(231, 69%, 60%);
+$clr-red: hsl(0, 94%, 66%);
+$clr-grayish-blue: hsl(229, 8%, 60%);
+$clr-dark-blue: hsl(229, 31%, 21%);
+$clr-white: #fff;
+
+$fontweight-medium: 400;
+$fontweight-bold: 500;
+
+@mixin responsive($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin card {
+  box-shadow: 0 1.5rem 2rem -0.5rem rgba(91, 164, 164, 0.25);
+  border-radius: 5px;
+  background: $clr-white;
+}
