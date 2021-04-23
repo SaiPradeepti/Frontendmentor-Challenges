@@ -1,6 +1,7 @@
 import React,{ useState } from 'react'
 import data from '../data/featuresData'
-import '../scss/main.scss'
+// import '../scss/main.scss'
+import Fade from 'react-reveal/Fade';
 
 const Features = () => {
     const [value,setValue] = useState(0);
@@ -23,13 +24,17 @@ const Features = () => {
             </div>
             <div className="featureTab">
                 <div className="featureTab__img">
-                    <img src={img} alt={feature}/>
+                    <Fade left spy={value} appear distance='100px'>
+                        <img src={img} alt={feature}/>
+                    </Fade>
                 </div>
-                <div className="featureTab__details">
-                    <div className="featureTab__title">{title}</div>
-                    <div className="featureTab__desc">{desc}</div>
-                    <div className="featureTab__btn">More Info</div>
-                </div>
+                <Fade spy={value} appear>
+                    <div className="featureTab__details">
+                        <div className="featureTab__title">{title}</div>
+                        <div className="featureTab__desc">{desc}</div>
+                        <div className="featureTab__btn">More Info</div>
+                    </div>
+                </Fade>
             </div>
         </div>
     )

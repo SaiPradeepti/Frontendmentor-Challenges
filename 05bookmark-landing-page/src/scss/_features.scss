@@ -52,25 +52,17 @@
   display: flex;
   width: 70%;
   justify-content: center;
-  border: 1px solid black;
 
   #{&}__img {
     width: 50%;
     display: flex;
-    // align-items: center;
     justify-content: flex-end;
-    border: 1px solid black;
-
-    img {
-      border: 1px solid black;
-    }
   }
 
   #{&}__details {
     width: 50%;
     padding-top: 3rem;
     padding-left: 4rem;
-    // height: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -88,5 +80,9 @@
 
   #{&}__btn {
     @include btn($clr-blue);
+  }
+
+  @include responsive(1300px) {
+    flex-direction: column;
   }
 }

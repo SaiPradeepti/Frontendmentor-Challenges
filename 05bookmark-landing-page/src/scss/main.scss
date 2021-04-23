@@ -1,2 +1,8 @@
 @import "./config";
 @import "./features";
+
+@mixin responsive($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
