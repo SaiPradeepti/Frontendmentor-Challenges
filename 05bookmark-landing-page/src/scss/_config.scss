@@ -27,8 +27,27 @@ $fontweight-bold: 500;
   }
 }
 
-@mixin card {
-  box-shadow: 0 1.5rem 2rem -0.5rem rgba(91, 164, 164, 0.25);
+@mixin headingFont {
+  font-size: 2rem;
+  font-weight: $fontweight-bold;
+  color: $clr-dark-blue;
+}
+
+@mixin text {
+  color: $clr-grayish-blue;
+}
+
+@mixin btn($clr) {
   border-radius: 5px;
-  background: $clr-white;
+  padding: 0.7rem 2rem;
+  cursor: pointer;
+  color: $clr-white;
+  background: $clr;
+  transition: color 300ms ease;
+
+  &:hover {
+    color: $clr;
+    background: $clr-white;
+    border: 2px solid $clr;
+  }
 }

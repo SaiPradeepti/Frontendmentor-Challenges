@@ -1,0 +1,92 @@
+@import "./config";
+
+.features {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+
+  & > * {
+    margin-top: 2rem;
+  }
+
+  #{&}__title {
+    @include headingFont;
+  }
+
+  #{&}__desc {
+    width: 30%;
+    text-align: center;
+    @include text;
+  }
+
+  #{&}__tabs {
+    display: flex;
+  }
+
+  #{&}__tab {
+    padding: 1rem 2rem;
+    color: $clr-grayish-blue;
+    border-bottom: 1px solid lighten($clr-grayish-blue, 15%);
+
+    &.activeTab {
+      color: $clr-dark-blue;
+      border-bottom: 5px solid $clr-red;
+    }
+  }
+
+  &::after {
+    content: "";
+    height: 20rem;
+    width: 60rem;
+    background: $clr-blue;
+    z-index: -1;
+    position: absolute;
+    left: -18%;
+    bottom: 1%;
+    border-radius: 100rem;
+  }
+}
+
+.featureTab {
+  display: flex;
+  width: 70%;
+  justify-content: center;
+  border: 1px solid black;
+
+  #{&}__img {
+    width: 50%;
+    display: flex;
+    // align-items: center;
+    justify-content: flex-end;
+    border: 1px solid black;
+
+    img {
+      border: 1px solid black;
+    }
+  }
+
+  #{&}__details {
+    width: 50%;
+    padding-top: 3rem;
+    padding-left: 4rem;
+    // height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  #{&}__title {
+    @include headingFont;
+  }
+
+  #{&}__desc {
+    @include text;
+    width: 70%;
+  }
+
+  #{&}__btn {
+    @include btn($clr-blue);
+  }
+}
