@@ -1,0 +1,72 @@
+@import "./config";
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  height: 40vh;
+  background: $clr-blue;
+  color: $clr-white;
+
+  #{&}__title {
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+  }
+
+  #{&}__content {
+    font-size: 2rem;
+    width: 35%;
+    text-align: center;
+    font-weight: $fontweight-bold;
+
+    @include responsive(900px) {
+      width: 55%;
+    }
+    @include responsive(600px) {
+      width: 85%;
+    }
+    @include responsive(600px) {
+      font-size: 1.5rem;
+      width: 95%;
+    }
+  }
+
+  #{&}__form {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    width: 50%;
+
+    .form-control input {
+      padding: 0.5rem;
+      padding: 0.7rem 2rem;
+      border-radius: 5px;
+      width: 300px;
+      outline: none;
+      @include responsive(900px) {
+        width: 100%;
+      }
+    }
+
+    .contact__btn {
+      @include btn($clr-red);
+      border: none;
+    }
+    @include responsive(900px) {
+      width: 70%;
+    }
+    @include responsive(600px) {
+      flex-direction: column;
+      width: 60%;
+    }
+    @include responsive(480px) {
+      width: 80%;
+    }
+  }
+
+  @include responsive(900px) {
+    height: 50vh;
+  }
+}
