@@ -5,6 +5,7 @@
   flex-direction: column;
   align-items: center;
   margin-top: 2rem;
+  margin-bottom: 8rem;
 
   & > * {
     margin-top: 2rem;
@@ -98,17 +99,13 @@
   display: flex;
   width: 70%;
   justify-content: center;
-  border: 3px solid blue;
 
   #{&}__img {
     width: 50%;
     display: flex;
     justify-content: flex-end;
-    border: 3px solid blue;
 
     img {
-      border: 3px solid blue;
-
       @include responsive(768px) {
         height: 90%;
         width: 90%;
@@ -122,7 +119,6 @@
   }
 
   #{&}__details {
-    border: 3px solid blue;
     width: 50%;
     padding-top: 3rem;
     padding-left: 4rem;
@@ -133,9 +129,12 @@
 
     @include responsive(1300px) {
       width: 100%;
-      padding-top: 4rem;
+      padding-top: 6rem;
       padding-left: 0rem;
       align-items: center;
+    }
+    @include responsive(900px) {
+      padding-top: 4rem;
     }
   }
 

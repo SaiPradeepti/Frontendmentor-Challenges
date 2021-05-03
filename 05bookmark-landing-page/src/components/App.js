@@ -1,5 +1,6 @@
 import React from 'react'
 import Features from './Features'
+import Contact from './Contact'
 import '../scss/main.scss';
 
 const App = () => {
@@ -10,7 +11,7 @@ const App = () => {
       <Features />
       {/* <Extensions /> */}
       {/* <FAQ /> */}
-      {/* <Contact /> */}
+      <Contact />
       {/* <Footer /> */}
     </main>
   )
