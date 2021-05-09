@@ -1,0 +1,41 @@
+@import "./config";
+
+.app {
+  height: 100vh;
+  background: $clr-very-dark-blue;
+  padding-top: 15vh;
+
+  #{&}__header {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    color: $clr-white;
+    border: 1px solid white;
+
+    .app__title {
+      letter-spacing: 1rem;
+      text-transform: uppercase;
+      font-size: 2.5rem;
+      font-weight: $fontweight-bold;
+    }
+
+    .app__darkTheme {
+      cursor: pointer;
+      transition: transform ease 500ms;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+.darkTheme {
+  background: url(../images/bg-desktop-dark.jpg) $clr-very-dark-blue;
+  background-repeat: no-repeat;
+}
+.lightTheme {
+  background: url(../images/bg-desktop-light.jpg) $clr-very-light-gray;
+  background-repeat: no-repeat;
+}
