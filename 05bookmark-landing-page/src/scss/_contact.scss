@@ -13,6 +13,9 @@
   #{&}__title {
     letter-spacing: 0.3rem;
     text-transform: uppercase;
+    @include responsive(480px) {
+      font-size: 0.9rem;
+    }
   }
 
   #{&}__content {
@@ -38,7 +41,6 @@
     gap: 1rem;
     justify-content: center;
     width: 50%;
-
     .form-control input {
       padding: 0.5rem;
       padding: 0.7rem 2rem;

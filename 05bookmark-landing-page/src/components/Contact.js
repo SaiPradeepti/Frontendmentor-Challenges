@@ -20,7 +20,7 @@ const Contact = () => {
             <div className='contact__content'>Stay up-to-date with what we’re doing</div>
             <form className='contact__form' onSubmit={handleSubmit}>
                 <div className="form-control">
-                    <input type="email" value={email} onChange={(e)=>setEmail(e.target.value)} placeholder='Enter your email address' />
+                    <input type="email" name='email' value={email} onChange={(e)=>setEmail(e.target.value)} placeholder='Enter your email address' />
                 </div>
                 <button className='contact__btn'>Contact Us</button>
             </form>

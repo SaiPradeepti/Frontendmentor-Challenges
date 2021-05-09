@@ -8,7 +8,7 @@ const App = () => {
     <main>
       {/* <Navbar /> */}
       {/* <HeroSection /> */}
-      {/* <Features /> */}
+      <Features />
       {/* <Extensions /> */}
       {/* <FAQ /> */}
       <Contact />
