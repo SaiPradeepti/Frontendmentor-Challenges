@@ -8,6 +8,9 @@ import List from './List'
 const App = () => {
   const [lightTheme,setLightTheme] = useState(false);
   const [list,setList] = useState([]);
+  const addToDo = (todo) =>{
+    setList([...list,todo]);
+  }
   return (
     <div className={`app ${lightTheme ? 'lightTheme' : 'darkTheme'}`}>
       <div className="app__header">
@@ -18,8 +21,8 @@ const App = () => {
           }
         </div>
       </div>
-      <Input setList={setList} list={list} />
-      <List />
+      <Input addToDo={addToDo} />
+      <List list={list} />
     </div>
   )
 }

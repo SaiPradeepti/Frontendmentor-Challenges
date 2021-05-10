@@ -14,7 +14,12 @@ $mobile: 375px;
 $desktop: 1440px;
 
 $clr-bright-blue: hsl(220, 98%, 61%);
-$clr-check-background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+// $clr-check-background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+$clr-check-background: linear-gradient(
+  45deg,
+  hsl(192, 100%, 67%),
+  hsl(280, 87%, 65%)
+);
 $clr-very-light-gray: hsl(0, 0%, 98%);
 $clr-very-light-grayish-blue: hsl(236, 33%, 92%);
 $clr-light-grayish-blue: hsl(233, 11%, 84%);

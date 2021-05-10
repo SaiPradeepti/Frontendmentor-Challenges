@@ -1,0 +1,37 @@
+.app__todo {
+  @include box;
+  border-radius: none;
+  border-bottom: 1px solid $clr-dark-grayish-blue;
+  align-items: center;
+
+  .radio {
+    position: relative;
+
+    input[type="radio"] {
+      height: 25px;
+      width: 25px;
+      background-color: $clr-very-dark-desaturated-blue;
+      display: block;
+      position: relative;
+    }
+    .radioCover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: $clr-very-dark-desaturated-blue;
+      border: 1px solid $clr-dark-grayish-blue;
+      border-radius: 50%;
+    }
+  }
+
+  .todo {
+    color: $clr-white;
+  }
+}
+
+.app .app__todo .radio .radioClick {
+  //   background: $clr-check-background;
+  background: linear-gradient(45deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}

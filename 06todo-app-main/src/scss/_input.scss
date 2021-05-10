@@ -1,7 +1,7 @@
 .app {
   #{&}__input {
     @include boxCenter;
-    margin-top: 3rem;
+    margin-top: 2rem;
 
     .form-control {
       @include box;

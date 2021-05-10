@@ -1,14 +1,12 @@
 import React, { useState } from 'react'
 
-const Input = ({setList,list}) => {
+const Input = ({addToDo}) => {
     const [todo,setTodo] = useState('');
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(e.target.value !== ''){
-            setList((list) => [...list,e.target.value]);
-            console.log(list)
-        }
-        
+        if(todo !== '')
+            addToDo(todo);
+        setTodo('');   
     }
     return (
         <div className='app__input'>
