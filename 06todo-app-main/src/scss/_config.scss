@@ -37,3 +37,22 @@ $fontweight-bold: 700;
     @content;
   }
 }
+
+@mixin background {
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@mixin boxCenter {
+  width: 40%;
+  margin: auto;
+}
+
+@mixin box {
+  background: $clr-very-dark-desaturated-blue;
+  height: 3.5rem;
+  display: flex;
+  gap: 2rem;
+  padding-left: 1rem;
+  border-radius: 5px;
+}

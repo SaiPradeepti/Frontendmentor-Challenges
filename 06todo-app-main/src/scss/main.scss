@@ -1,17 +1,18 @@
 @import "./config";
+@import "./input";
+@import "./list";
 
 .app {
   height: 100vh;
+  width: 100vw;
   background: $clr-very-dark-blue;
-  padding-top: 15vh;
+  padding-top: 10vh;
 
   #{&}__header {
-    width: 40%;
     display: flex;
     justify-content: space-between;
-    margin: auto;
+    @include boxCenter;
     color: $clr-white;
-    border: 1px solid white;
 
     .app__title {
       letter-spacing: 1rem;
@@ -33,9 +34,9 @@
 
 .darkTheme {
   background: url(../images/bg-desktop-dark.jpg) $clr-very-dark-blue;
-  background-repeat: no-repeat;
+  @include background;
 }
 .lightTheme {
   background: url(../images/bg-desktop-light.jpg) $clr-very-light-gray;
-  background-repeat: no-repeat;
+  @include background;
 }
