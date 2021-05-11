@@ -5,6 +5,7 @@
 
     .form-control {
       @include box;
+      border-radius: 5px;
       box-shadow: 0px 8px 12px 3px rgba(0, 0, 0, 0.2);
 
       .form-radio {
@@ -31,7 +32,7 @@
       }
 
       input[type="text"] {
-        width: 70%;
+        width: 100%;
         background: $clr-very-dark-desaturated-blue;
         border: none;
         outline: none;

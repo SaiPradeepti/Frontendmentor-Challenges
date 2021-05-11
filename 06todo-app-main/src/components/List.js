@@ -11,6 +11,11 @@ const List = ({list}) => {
                     )                    
                 })
             }
+            <div className="app__menu">
+                <div className="app__listItems"></div>
+                <div className="app__states"></div>
+                <div className="app__clearCompleted"></div>
+            </div>
         </div>
     )
 }

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { FaCheck } from "react-icons/fa";
 
 const Todo = ({todo}) => {
     const [todoCompleted,setTodoCompleted] = useState(false);
@@ -12,9 +13,12 @@ const Todo = ({todo}) => {
             }
             }>
                 <input type="radio" name='radio' />
-                <div className={`radioCover ${todoCompleted ? 'radioClick' : ''}`} ></div>       
+                <div className={`radioCover ${todoCompleted ? 'radioClick' : ''}`} ></div>
+                {
+                    todoCompleted && <FaCheck className='faCheck'/>
+                }   
             </div>   
-            <div className="todo">
+            <div className={`todo ${todoCompleted ? 'todoCompleted' : ''}`}>
                 {todo}
             </div>                
         </div>

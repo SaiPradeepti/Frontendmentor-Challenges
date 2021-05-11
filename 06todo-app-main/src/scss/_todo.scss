@@ -15,14 +15,16 @@
       position: relative;
     }
     .radioCover {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
+      @include absolutePositioning;
       background: $clr-very-dark-desaturated-blue;
       border: 1px solid $clr-dark-grayish-blue;
       border-radius: 50%;
+    }
+    .faCheck {
+      @include absolutePositioning;
+      padding: 6px;
+      color: $clr-white;
+      z-index: 10;
     }
   }
 
@@ -32,6 +34,10 @@
 }
 
 .app .app__todo .radio .radioClick {
-  //   background: $clr-check-background;
   background: linear-gradient(45deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
+.app__todo .todoCompleted {
+  text-decoration: line-through;
+  color: $clr-dark-grayish-blue;
 }
