@@ -8,9 +8,22 @@ import List from './List'
 const App = () => {
   const [lightTheme,setLightTheme] = useState(false);
   const [list,setList] = useState([]);
+
+  // Adding todo to list from input field
   const addToDo = (todo) =>{
-    setList([...list,todo]);
+    setList([...list,{id:new Date().getTime().toString(),'todo':todo,completed:false}]);
   }
+
+  // Setting completed key of a todo to true
+  const completedToDo = (id) => {
+    setList(list.map(item => {
+      if(item.id === id)
+      item.completed = !item.completed;
+      return item;
+    }))
+  }
+    
+
   return (
     <div className={`app ${lightTheme ? 'lightTheme' : 'darkTheme'}`}>
       <div className="app__header">
@@ -22,7 +35,7 @@ const App = () => {
         </div>
       </div>
       <Input addToDo={addToDo} />
-      <List list={list} />
+      <List list={list} completedToDo={completedToDo}/>
     </div>
   )
 }
