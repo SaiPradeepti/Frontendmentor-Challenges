@@ -1,43 +1,72 @@
 .app__todo {
   @include box;
-  border-radius: none;
-  border-bottom: 1px solid $clr-dark-grayish-blue;
+  padding-right: 1.5rem;
+  // border-radius: none;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom: 1px solid $clr-very-dark-grayish-blue;
   align-items: center;
+  width: 100%;
+  z-index: 0;
 
-  .radio {
-    position: relative;
-
-    input[type="radio"] {
+  .app__button {
+    .button__wrapper {
       height: 25px;
       width: 25px;
-      background-color: $clr-very-dark-desaturated-blue;
-      display: block;
-      position: relative;
-    }
-    .radioCover {
-      @include absolutePositioning;
-      background: $clr-very-dark-desaturated-blue;
-      border: 1px solid $clr-dark-grayish-blue;
+      background: $clr-dark-grayish-blue;
+      padding: 2px;
       border-radius: 50%;
     }
+
     .faCheck {
-      @include absolutePositioning;
-      padding: 6px;
+      background: linear-gradient(
+        45deg,
+        hsl(192, 100%, 67%),
+        hsl(280, 87%, 65%)
+      );
+      padding: 3px;
       color: $clr-white;
-      z-index: 10;
+      border-radius: 50%;
+    }
+
+    .button {
+      height: 100%;
+      width: 100%;
+      background: $clr-very-dark-desaturated-blue;
+      border-radius: 50%;
     }
   }
 
   .todo {
     color: $clr-white;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .remove {
+    color: $clr-very-dark-grayish-blue;
+    margin-left: auto;
+    visibility: hidden;
   }
 }
 
-.app .app__todo .radio .radioClick {
+.app__todo .app__button .buttonClick {
   background: linear-gradient(45deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 }
 
 .app__todo .todoCompleted {
   text-decoration: line-through;
-  color: $clr-dark-grayish-blue;
+  color: $clr-very-dark-grayish-blue;
+}
+
+.app__todo:hover .app__button .button__wrapper {
+  cursor: pointer;
+  background: linear-gradient(45deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
+.app__todo:hover .remove {
+  visibility: visible;
+  cursor: pointer;
 }

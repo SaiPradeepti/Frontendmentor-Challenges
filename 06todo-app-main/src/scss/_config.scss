@@ -10,11 +10,32 @@
   font-size: 18px;
 }
 
+body {
+  /* Let's get this party started */
+  ::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  }
+}
+
 $mobile: 375px;
 $desktop: 1440px;
 
 $clr-bright-blue: hsl(220, 98%, 61%);
-// $clr-check-background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
 $clr-check-background: linear-gradient(
   45deg,
   hsl(192, 100%, 67%),

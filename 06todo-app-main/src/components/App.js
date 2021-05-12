@@ -22,6 +22,16 @@ const App = () => {
       return item;
     }))
   }
+
+  // Clearing completed todos from list
+  const clearCompleted = () => {
+    setList(list.filter(item => item.completed !== true))
+  }
+
+  // Remove todo
+  const removeToDo = (id) => {
+    setList(list.filter(item => item.id !== id))
+  }
     
 
   return (
@@ -35,7 +45,8 @@ const App = () => {
         </div>
       </div>
       <Input addToDo={addToDo} />
-      <List list={list} completedToDo={completedToDo}/>
+      <List list={list} completedToDo={completedToDo} clearCompleted={clearCompleted} removeToDo={removeToDo} />
+      <div className="app__drag">Drag and drop to reorder list</div>
     </div>
   )
 }

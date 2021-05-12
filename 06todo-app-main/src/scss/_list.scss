@@ -6,20 +6,38 @@
     background: $clr-very-dark-desaturated-blue;
     border-radius: 5px;
     box-shadow: 0px 8px 12px 3px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
     position: relative;
+  }
+
+  .todo__list {
+    height: 48vh;
+    overflow: auto;
   }
 
   #{&}__menu {
     height: 3.5rem;
     padding: 1rem;
-    color: $clr-light-grayish-blue;
-    position: absolute;
-    bottom: 0;
-    border-top: 1px solid $clr-dark-grayish-blue;
-    // border-top: 1px solid red;
+    color: $clr-very-dark-grayish-blue;
+    position: sticky;
+    top: 100%;
+    border-top: 1px solid $clr-very-dark-grayish-blue;
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    background: $clr-very-dark-desaturated-blue;
+
+    & > *:hover {
+      cursor: pointer;
+    }
+  }
+
+  #{&}__states {
+    display: flex;
+    gap: 1rem;
+
+    .activeState {
+      color: $clr-bright-blue;
+    }
   }
 }
