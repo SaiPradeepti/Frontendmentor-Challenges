@@ -1,7 +1,6 @@
 .app__todo {
   @include box;
   padding-right: 1.5rem;
-  // border-radius: none;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
   border-bottom: 1px solid $clr-very-dark-grayish-blue;
@@ -69,4 +68,20 @@
 .app__todo:hover .remove {
   visibility: visible;
   cursor: pointer;
+}
+
+.todo__light {
+  background: $clr-very-light-gray;
+}
+
+.todo__light .todo {
+  color: $clr-very-dark-grayish-blue;
+}
+
+.todo__light .app__button .button {
+  background: $clr-very-light-gray;
+}
+
+.todo__light .todoCompleted {
+  color: $clr-dark-grayish-blue;
 }

@@ -44,8 +44,8 @@ const App = () => {
           }
         </div>
       </div>
-      <Input addToDo={addToDo} />
-      <List list={list} completedToDo={completedToDo} clearCompleted={clearCompleted} removeToDo={removeToDo} />
+      <Input addToDo={addToDo} lightTheme={lightTheme} />
+      <List list={list} completedToDo={completedToDo} clearCompleted={clearCompleted} removeToDo={removeToDo} lightTheme={lightTheme} />
       <div className="app__drag">Drag and drop to reorder list</div>
     </div>
   )

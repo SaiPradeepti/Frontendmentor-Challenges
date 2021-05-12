@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Input = ({addToDo}) => {
+const Input = ({addToDo,lightTheme}) => {
     const [todo,setTodo] = useState('');
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -11,7 +11,7 @@ const Input = ({addToDo}) => {
     return (
         <div className='app__input'>
             <form onSubmit={handleSubmit}>
-                <div className="form-control">
+                <div className={`form-control ${lightTheme ? 'form-controlLight' : false}`}>
                     <div className='form-radio'>
                         <input type="radio" name='checkbox' />
                     <div className='radioCover'></div>       

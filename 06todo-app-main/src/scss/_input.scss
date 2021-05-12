@@ -36,9 +36,22 @@
         background: $clr-very-dark-desaturated-blue;
         border: none;
         outline: none;
-        color: white;
+        color: $clr-white;
         border-radius: 5px;
       }
     }
   }
+}
+
+.app .app__input .form-controlLight {
+  background: $clr-very-light-gray;
+}
+
+.app .app__input .form-controlLight .form-radio .radioCover {
+  background: $clr-very-light-gray;
+}
+
+.app .app__input .form-controlLight input[type="text"] {
+  background: $clr-very-light-gray;
+  color: $clr-very-dark-Grayish-blue;
 }

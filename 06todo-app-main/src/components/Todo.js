@@ -2,11 +2,11 @@ import React from 'react'
 import { FaCheck } from "react-icons/fa";
 import { VscChromeClose } from "react-icons/vsc";
 
-const Todo = ({item,completedToDo,removeToDo}) => {
+const Todo = ({item,completedToDo,removeToDo,lightTheme}) => {
     const {id,todo} = item;
     
     return (
-        <div className='app__todo'>
+        <div className={`app__todo ${lightTheme ? 'todo__light': false}`}>
             <div className='app__button' onClick={() => completedToDo(id)}>
                 <div className={`button__wrapper ${item.completed ? 'buttonClick' : false}`} >
                     {

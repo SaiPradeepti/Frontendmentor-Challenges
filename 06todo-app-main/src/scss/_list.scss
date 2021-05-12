@@ -41,3 +41,11 @@
     }
   }
 }
+
+.app .app__light {
+  background: $clr-very-light-gray;
+}
+
+.app .app__light .app__menu {
+  background: $clr-very-light-gray;
+}

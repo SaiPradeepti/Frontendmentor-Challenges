@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Todo from './Todo'
 
-const List = ({list,completedToDo,clearCompleted,removeToDo}) => {
+const List = ({list,completedToDo,clearCompleted,removeToDo,lightTheme}) => {
     const [newList,setNewList] = useState(list);
     const [itemsLeft,setItemsLeft] = useState(0);
     const [activeState,setActiveState] = useState('all');
@@ -33,12 +33,12 @@ const List = ({list,completedToDo,clearCompleted,removeToDo}) => {
     }, [list])
 
     return (
-        <div className='app__list'>
+        <div className={`app__list ${lightTheme ? 'app__light' : false}`}>
             <div className="todo__list">
             {
                 newList.map((item) => {
                     return (
-                        <Todo item={item} key={item.id} completedToDo={completedToDo} removeToDo={removeToDo}/>
+                        <Todo item={item} key={item.id} completedToDo={completedToDo} removeToDo={removeToDo} lightTheme={lightTheme}/>
                     )                    
                 })
             }</div>
