@@ -20,6 +20,10 @@
       text-transform: uppercase;
       font-size: 2.5rem;
       font-weight: $fontweight-bold;
+
+      @include responsive(500px) {
+        font-size: 2rem;
+      }
     }
 
     .app__darkTheme {
@@ -36,14 +40,35 @@
     color: $clr-very-dark-grayish-blue;
     margin-top: 3rem;
     text-align: center;
+
+    @include responsive(1200px) {
+      margin-top: 6rem;
+    }
+  }
+  @include responsive(500px) {
+    padding-top: 7vh;
   }
 }
 
 .darkTheme {
   background: url(../images/bg-desktop-dark.jpg) $clr-very-dark-blue;
   @include background;
+
+  @include responsive(600px) {
+    background: url(../images/bg-mobile-dark.jpg) $clr-very-dark-blue;
+    @include background;
+  }
 }
 .lightTheme {
   background: url(../images/bg-desktop-light.jpg) $clr-very-light-gray;
   @include background;
+
+  @include responsive(600px) {
+    background: url(../images/bg-mobile-light.jpg) $clr-very-light-gray;
+    @include background;
+  }
+}
+
+.lightTheme .app__drag {
+  color: $clr-dark-grayish-blue;
 }

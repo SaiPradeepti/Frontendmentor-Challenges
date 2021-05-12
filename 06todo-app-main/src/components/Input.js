@@ -12,9 +12,8 @@ const Input = ({addToDo,lightTheme}) => {
         <div className='app__input'>
             <form onSubmit={handleSubmit}>
                 <div className={`form-control ${lightTheme ? 'form-controlLight' : false}`}>
-                    <div className='form-radio'>
-                        <input type="radio" name='checkbox' />
-                    <div className='radioCover'></div>       
+                    <div className='button__wrapper'>
+                        <div className='button'></div>       
                     </div>   
                     <input type="text" name='todo' value={todo} onChange={(e)=>setTodo(e.target.value)} placeholder='Create a new todo...' autoComplete="off" />
                 </div>

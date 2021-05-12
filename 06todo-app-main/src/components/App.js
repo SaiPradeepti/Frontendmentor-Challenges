@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import '../scss/main.scss'
-import { FiSun } from "react-icons/fi";
-import { FiMoon } from "react-icons/fi"
 import Input from './Input'
 import List from './List'
 
@@ -40,7 +38,7 @@ const App = () => {
         <div className="app__title">todo</div>
         <div className="app__darkTheme" onClick={()=>setLightTheme(!lightTheme)}>
           {
-            lightTheme ? <FiMoon size={30} /> : <FiSun size={30} />
+            lightTheme ? <img src="./images/icon-moon.svg" alt="moon" /> : <img src="./images/icon-sun.svg" alt="sun" />
           }
         </div>
       </div>

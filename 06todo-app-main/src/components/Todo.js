@@ -1,6 +1,4 @@
 import React from 'react'
-import { FaCheck } from "react-icons/fa";
-import { VscChromeClose } from "react-icons/vsc";
 
 const Todo = ({item,completedToDo,removeToDo,lightTheme}) => {
     const {id,todo} = item;
@@ -10,14 +8,14 @@ const Todo = ({item,completedToDo,removeToDo,lightTheme}) => {
             <div className='app__button' onClick={() => completedToDo(id)}>
                 <div className={`button__wrapper ${item.completed ? 'buttonClick' : false}`} >
                     {
-                            item.completed ? <FaCheck className='faCheck'/> : <div className="button"></div>
+                            item.completed ? <img src="./images/icon-check.svg" alt="icon-check" className="faCheck" /> : <div className="button"></div>
                     }
                 </div>
             </div>   
             <div className={`todo ${item.completed ? 'todoCompleted' : ''}`} onClick={() => completedToDo(id)}>
                 {todo}
             </div>
-            <VscChromeClose className='remove' onClick={() => removeToDo(id)}/>               
+            <img src="./images/icon-cross.svg" alt="icon-cross"  className='remove' onClick={() => removeToDo(id)}/>          
         </div>
     )
 }

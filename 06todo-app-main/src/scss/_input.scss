@@ -8,27 +8,13 @@
       border-radius: 5px;
       box-shadow: 0px 8px 12px 3px rgba(0, 0, 0, 0.2);
 
-      .form-radio {
-        position: relative;
+      .button__wrapper {
         align-self: center;
+        @include buttonWrapper;
+      }
 
-        input[type="radio"] {
-          height: 25px;
-          width: 25px;
-          background-color: $clr-very-dark-desaturated-blue;
-          display: block;
-          position: relative;
-        }
-        .radioCover {
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 100%;
-          width: 100%;
-          background: $clr-very-dark-desaturated-blue;
-          border: 1px solid $clr-dark-grayish-blue;
-          border-radius: 50%;
-        }
+      .button {
+        @include button;
       }
 
       input[type="text"] {
@@ -40,11 +26,15 @@
         border-radius: 5px;
       }
     }
+    @include responsive(500px) {
+      margin-top: 1rem;
+    }
   }
 }
 
 .app .app__input .form-controlLight {
   background: $clr-very-light-gray;
+  box-shadow: 0px 6px 10px -2px rgba(0, 0, 0, 0.2);
 }
 
 .app .app__input .form-controlLight .form-radio .radioCover {

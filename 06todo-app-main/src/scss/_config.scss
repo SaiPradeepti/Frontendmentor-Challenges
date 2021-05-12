@@ -72,6 +72,22 @@ $fontweight-bold: 700;
 @mixin boxCenter {
   width: 40%;
   margin: auto;
+
+  @include responsive(1100px) {
+    width: 50%;
+  }
+  @include responsive(900px) {
+    width: 70%;
+  }
+  @include responsive(600px) {
+    width: 80%;
+  }
+  @include responsive(400px) {
+    width: 90%;
+  }
+  @include responsive(375px) {
+    width: 337.675px;
+  }
 }
 
 @mixin box {
@@ -80,6 +96,10 @@ $fontweight-bold: 700;
   display: flex;
   gap: 2rem;
   padding-left: 1rem;
+
+  @include responsive(400px) {
+    height: 3rem;
+  }
 }
 
 @mixin absolutePositioning {
@@ -88,4 +108,21 @@ $fontweight-bold: 700;
   left: 0;
   height: 100%;
   width: 100%;
+}
+
+@mixin buttonWrapper {
+  height: 25px;
+  width: 25px;
+  background: $clr-dark-grayish-blue;
+  padding: 2px;
+  border-radius: 50%;
+  display: flex;
+  align-content: center;
+}
+
+@mixin button {
+  height: 100%;
+  width: 100%;
+  background: $clr-very-dark-desaturated-blue;
+  border-radius: 50%;
 }
