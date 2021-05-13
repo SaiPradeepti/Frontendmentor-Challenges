@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Todo from './Todo'
+import { Droppable } from 'react-beautiful-dnd';
 
 const List = ({list,completedToDo,clearCompleted,removeToDo,lightTheme}) => {
     const [newList,setNewList] = useState(list);
@@ -34,14 +35,21 @@ const List = ({list,completedToDo,clearCompleted,removeToDo,lightTheme}) => {
 
     return (
         <div className={`app__list ${lightTheme ? 'app__light' : false}`}>
-            <div className="todo__list">
-            {
-                newList.map((item) => {
-                    return (
-                        <Todo item={item} key={item.id} completedToDo={completedToDo} removeToDo={removeToDo} lightTheme={lightTheme}/>
-                    )                    
-                })
-            }</div>
+            <Droppable droppableId="droppable">
+                {(provided, _) => (
+                    // <div innerRef={provided.innerRef} {...provided.droppableProps} className="todo__list">
+                    <div provided={provided} ref={provided.innerRef} className="todo__list">
+                        {
+                            newList.map((item,index) => {
+                                return (
+                                    <Todo index={index} item={item} key={item.id} completedToDo={completedToDo} removeToDo={removeToDo} lightTheme={lightTheme} ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps} />
+                                )                    
+                            })
+                        }
+                        {provided.placeholder}
+                    </div>
+                )}            
+            </Droppable>
             <div className="app__menu">
                 <div className="app__listItems">{itemsLeft} items left</div>
                 <div className="app__states">

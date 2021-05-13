@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import '../scss/main.scss'
 import Input from './Input'
 import List from './List'
+import { DragDropContext } from 'react-beautiful-dnd';
 
 const App = () => {
   const [lightTheme,setLightTheme] = useState(false);
@@ -33,19 +34,23 @@ const App = () => {
     
 
   return (
-    <div className={`app ${lightTheme ? 'lightTheme' : 'darkTheme'}`}>
-      <div className="app__header">
-        <div className="app__title">todo</div>
-        <div className="app__darkTheme" onClick={()=>setLightTheme(!lightTheme)}>
-          {
-            lightTheme ? <img src="./images/icon-moon.svg" alt="moon" /> : <img src="./images/icon-sun.svg" alt="sun" />
-          }
+    
+      <div className={`app ${lightTheme ? 'lightTheme' : 'darkTheme'}`}>
+        <DragDropContext onDragEnd={()=>console.log(list)}>
+        <div className="app__header">
+          <div className="app__title">todo</div>
+          <div className="app__darkTheme" onClick={()=>setLightTheme(!lightTheme)}>
+            {
+              lightTheme ? <img src="./images/icon-moon.svg" alt="moon" /> : <img src="./images/icon-sun.svg" alt="sun" />
+            }
+          </div>
         </div>
+        <Input addToDo={addToDo} lightTheme={lightTheme} />
+        <List list={list} completedToDo={completedToDo} clearCompleted={clearCompleted} removeToDo={removeToDo} lightTheme={lightTheme} />
+        <div className="app__drag">Drag and drop to reorder list</div>
+        </DragDropContext>
       </div>
-      <Input addToDo={addToDo} lightTheme={lightTheme} />
-      <List list={list} completedToDo={completedToDo} clearCompleted={clearCompleted} removeToDo={removeToDo} lightTheme={lightTheme} />
-      <div className="app__drag">Drag and drop to reorder list</div>
-    </div>
+    
   )
 }
 
