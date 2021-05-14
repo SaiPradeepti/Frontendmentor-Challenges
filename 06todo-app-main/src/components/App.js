@@ -1,12 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import '../scss/main.scss'
 import Input from './Input'
 import List from './List'
 import { DragDropContext } from 'react-beautiful-dnd';
 
+
+const getLocalStorage = () => {
+  let list = JSON.parse(localStorage.getItem('list'));
+  if(list)
+    return list;
+  else
+    return [];
+}
+
 const App = () => {
   const [lightTheme,setLightTheme] = useState(false);
-  const [list,setList] = useState([]);
+  const [list,setList] = useState(getLocalStorage());
 
   // Adding todo to list from input field
   const addToDo = (todo) =>{
@@ -31,12 +40,22 @@ const App = () => {
   const removeToDo = (id) => {
     setList(list.filter(item => item.id !== id))
   }
+
+  // Set Local Storage
+  useEffect(() => {
+    localStorage.setItem('list',JSON.stringify(list));
+  },[list]);
     
 
   return (
     
       <div className={`app ${lightTheme ? 'lightTheme' : 'darkTheme'}`}>
-        <DragDropContext onDragEnd={()=>console.log(list)}>
+        <DragDropContext onDragEnd={(param)=>{
+          const srcIndex = param.source.index;
+          const destIndex = param.destination.index;
+          list.splice(destIndex,0,list.splice(srcIndex,1)[0])
+          console.log(param);
+        }}>
         <div className="app__header">
           <div className="app__title">todo</div>
           <div className="app__darkTheme" onClick={()=>setLightTheme(!lightTheme)}>
