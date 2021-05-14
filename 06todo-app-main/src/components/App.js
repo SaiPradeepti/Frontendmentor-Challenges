@@ -4,6 +4,9 @@ import Input from './Input'
 import List from './List'
 import { DragDropContext } from 'react-beautiful-dnd';
 
+const setLocalStorage = (list) => {
+  localStorage.setItem('list',JSON.stringify(list));
+}
 
 const getLocalStorage = () => {
   let list = JSON.parse(localStorage.getItem('list'));
@@ -43,7 +46,7 @@ const App = () => {
 
   // Set Local Storage
   useEffect(() => {
-    localStorage.setItem('list',JSON.stringify(list));
+    setLocalStorage(list)
   },[list]);
     
 
@@ -51,9 +54,14 @@ const App = () => {
     
       <div className={`app ${lightTheme ? 'lightTheme' : 'darkTheme'}`}>
         <DragDropContext onDragEnd={(param)=>{
+          if(!param.destination){
+            return;
+          }
           const srcIndex = param.source.index;
           const destIndex = param.destination.index;
-          list.splice(destIndex,0,list.splice(srcIndex,1)[0])
+
+          list.splice(destIndex,0,list.splice(srcIndex,1)[0]);
+          setLocalStorage(list);
           console.log(param);
         }}>
         <div className="app__header">

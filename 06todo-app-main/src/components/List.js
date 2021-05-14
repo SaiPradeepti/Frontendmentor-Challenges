@@ -43,7 +43,7 @@ const List = ({list,completedToDo,clearCompleted,removeToDo,lightTheme}) => {
                                 return (
                                     <Draggable draggableId={item.id} index={index} key={item.id}>
                                         {(provided, snapshot) => (
-                                            <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                                            <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps} style={{opacity: snapshot.isDragging ? '0.5' : '1',...provided.draggableProps.style}}>
                                                 <Todo index={index} item={item}  completedToDo={completedToDo} removeToDo={removeToDo} lightTheme={lightTheme} />
                                             </div>
                                         )}
