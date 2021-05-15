@@ -1,6 +1,7 @@
 @import "./config";
 @import "./features";
 @import "./contact";
+@import "./navbar";
 
 @mixin responsive($width) {
   @media (max-width: $width) {

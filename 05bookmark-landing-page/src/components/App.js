@@ -1,4 +1,5 @@
 import React from 'react'
+import Navbar from './Navbar'
 import Features from './Features'
 import Contact from './Contact'
 import '../scss/main.scss';
@@ -6,12 +7,12 @@ import '../scss/main.scss';
 const App = () => {
   return (
     <main>
-      {/* <Navbar /> */}
+      <Navbar />
       {/* <HeroSection /> */}
-      <Features />
+      {/* <Features /> */}
       {/* <Extensions /> */}
       {/* <FAQ /> */}
-      <Contact />
+      {/* <Contact /> */}
       {/* <Footer /> */}
     </main>
   )

@@ -44,10 +44,19 @@ $fontweight-bold: 500;
   color: $clr-white;
   background: $clr;
   transition: color 300ms ease;
+  border: 2px solid $clr;
 
   &:hover {
     color: $clr;
     background: $clr-white;
-    border: 2px solid $clr;
+  }
+}
+
+@mixin navLinks {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  @include responsive(1000px) {
+    letter-spacing: 1px;
   }
 }

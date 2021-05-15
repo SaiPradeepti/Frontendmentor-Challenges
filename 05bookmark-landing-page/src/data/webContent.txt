@@ -1,7 +1,3 @@
-Features
-  Pricing
-  Contact
-  Login
 
   A Simple Bookmark Manager
 
