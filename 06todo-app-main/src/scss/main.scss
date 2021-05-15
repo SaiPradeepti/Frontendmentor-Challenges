@@ -8,6 +8,7 @@
   width: 100vw;
   background: $clr-very-dark-blue;
   padding-top: 10vh;
+  transition: background 0.5s ease;
 
   #{&}__header {
     display: flex;
@@ -38,7 +39,7 @@
 
   #{&}__drag {
     color: $clr-very-dark-grayish-blue;
-    margin-top: 3rem;
+    margin-top: 2rem;
     text-align: center;
 
     @include responsive(1200px) {

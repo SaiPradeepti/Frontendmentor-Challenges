@@ -39,8 +39,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution](https://your-solution-url.com)
-- Live Site URL: [Live Site](https://your-live-site-url.com)
+- Solution URL: [Solution](https://github.com/SaiPradeepti/Frontendmentor-Challenges/tree/main/06todo-app-main)
+- Live Site URL: [Live Site](https://todo-app-main-saipradeepti.netlify.app/)
 
 ## My process
 
@@ -49,7 +49,7 @@ Users should be able to:
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
+- SASS
 - React
 - LocalStorage - For retaining Todo List
 - [react-beautiful-dnd](https://github.com/atlassian/react-beautiful-dnd) - Drag and Drop for React
