@@ -29,6 +29,10 @@
     &:hover {
       cursor: pointer;
     }
+
+    @include responsive(500px) {
+      font-size: 0.8rem;
+    }
   }
 
   .remove {
