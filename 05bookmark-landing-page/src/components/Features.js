@@ -8,7 +8,7 @@ const Features = () => {
     const {id, feature, img, title, desc} = data[value];
     
     return (
-        <div className='features'>
+        <div className='features' id='features'>
             <div className="features__title">Features</div>
             <div className="features__desc">Our aim is to make it quick and easy for you to access your favourite websites. Your bookmarks sync between your devices so you can access them on the go.</div>
             <div className="features__tabs">

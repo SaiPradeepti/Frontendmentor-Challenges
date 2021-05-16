@@ -64,7 +64,7 @@
     height: 20rem;
     width: 60rem;
     background: $clr-blue;
-    z-index: -1;
+    z-index: -2;
     position: absolute;
     left: -18%;
     bottom: 1%;
@@ -109,6 +109,7 @@
       @include responsive(768px) {
         height: 90%;
         width: 90%;
+        z-index: -1;
       }
     }
 
@@ -126,6 +127,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 2rem;
+    z-index: -1;
 
     @include responsive(1300px) {
       width: 100%;

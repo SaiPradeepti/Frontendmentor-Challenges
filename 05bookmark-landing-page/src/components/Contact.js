@@ -15,7 +15,7 @@ const Contact = () => {
         setEmail('');
     }
     return (
-        <div className='contact'>
+        <div className='contact' id='contact'>
             <div className='contact__title'>35,000+ already joined</div>
             <div className='contact__content'>Stay up-to-date with what we’re doing</div>
             <form className='contact__form' onSubmit={handleSubmit}>
