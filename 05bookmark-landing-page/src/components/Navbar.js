@@ -23,6 +23,21 @@ const Navbar = () => {
                     <img src="/img/icon-hamburger.svg" alt="hamBurgerIcon" />
                 </div>
             </div>
+            <div className="nav__overlay overlay">
+                <div className="overlay__menu">
+                    <div className="overlay__logo">
+                        <div className="logo">                        
+                            <img src="/img/logo-bookmark-overlay.svg" alt="logo-overlay" />
+                        </div>
+                        <div className="closeIcon">
+                            <img src="/img/icon-close.svg" alt="close-icon" />
+                        </div>
+                    </div>
+                    <div className="overlay__links">
+                    </div>
+                    <div className="overlay__social"></div>
+                </div>
+            </div>
         </nav>
     )
 }

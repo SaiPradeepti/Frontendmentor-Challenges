@@ -56,10 +56,59 @@
     }
   }
 
+  #{&}__overlay {
+    display: none;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+
+    @include responsive(800px) {
+      display: block;
+    }
+  }
+
   @include responsive(1300px) {
     width: 80%;
   }
   @include responsive(1100px) {
     width: 90%;
+  }
+  @include responsive(375px) {
+    width: 336px;
+  }
+}
+
+.overlay {
+  width: 100%;
+  height: 100vh;
+  background: rgba(16, 24, 77, 0.9);
+  color: $clr-white;
+
+  #{&}__menu {
+    width: 80%;
+    height: 90%;
+    margin: auto;
+    padding: 5rem 0;
+    border: 1px solid white;
+
+    #{&}__logo {
+      border: 1px solid white;
+      display: flex;
+      justify-content: space-between;
+      .logo {
+      }
+      .closeIcon {
+      }
+    }
+
+    #{&}__links {
+    }
+
+    #{&}__social {
+    }
+
+    @include responsive(375px) {
+      width: 300px;
+    }
   }
 }
