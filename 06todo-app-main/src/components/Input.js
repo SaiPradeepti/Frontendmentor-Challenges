@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 
-const Input = ({addToDo,lightTheme}) => {
+const Input = ({dispatch,lightTheme}) => {
     const [todo,setTodo] = useState('');
     const handleSubmit = (e) => {
         e.preventDefault();
         if(todo !== '')
-            addToDo(todo);
+            dispatch({type: 'addToDo', payload: {id:new Date().getTime().toString(),'todo':todo,completed:false}});
         setTodo('');   
     }
     return (

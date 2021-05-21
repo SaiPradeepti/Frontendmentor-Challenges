@@ -126,3 +126,9 @@ $fontweight-bold: 700;
   background: $clr-very-dark-desaturated-blue;
   border-radius: 50%;
 }
+
+@mixin centerElement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

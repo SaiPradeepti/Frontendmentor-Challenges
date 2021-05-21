@@ -20,9 +20,22 @@
     }
   }
 
+  #{&}__emptylist {
+    height: 40vh;
+  }
+
   .todo__list {
     height: 80%;
     overflow: auto;
+  }
+
+  .emptyList {
+    @include centerElement;
+    height: 40%;
+  }
+
+  .todo__msg {
+    color: $clr-very-dark-grayish-blue;
   }
 
   #{&}__menu {

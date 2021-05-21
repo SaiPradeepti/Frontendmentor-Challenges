@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Todo from './Todo'
 import { Droppable, Draggable } from 'react-beautiful-dnd';
 
-const List = ({list,completedToDo,clearCompleted,removeToDo,lightTheme}) => {
+const List = ({dispatch,list,lightTheme}) => {
     const [newList,setNewList] = useState(list);
     const [itemsLeft,setItemsLeft] = useState(0);
     const [activeState,setActiveState] = useState('all');
@@ -32,25 +32,25 @@ const List = ({list,completedToDo,clearCompleted,removeToDo,lightTheme}) => {
         },0);
         setItemsLeft(count);
     }, [list])
-
+    
     return (
-        <div className={`app__list ${lightTheme ? 'app__light' : false}`}>
+        <div className={`app__list ${lightTheme ? 'app__light' : false} ${newList.length===0? 'app__emptylist' : false}`}>
             <Droppable droppableId="droppable">
                 {(provided, _) => (
-                    <div {...provided.droppableProps} ref={provided.innerRef} className="todo__list">
-                        {
-                            newList.map((item,index) => {
-                                return (
-                                    <Draggable draggableId={item.id} index={index} key={item.id}>
-                                        {(provided, snapshot) => (
-                                            <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-                                                <Todo index={index} item={item}  completedToDo={completedToDo} removeToDo={removeToDo} lightTheme={lightTheme} />
-                                            </div>
-                                        )}
-                                    </Draggable>
-                                )                    
-                            })
-                        }
+                    <div {...provided.droppableProps} ref={provided.innerRef} className={`todo__list ${newList.length === 0 ? 'emptyList' : false}`}>
+                        {(newList.length===0) && <div className='todo__msg'>Add items to the list!</div>}
+                        {   newList.map((item,index) => {
+                                    return (
+                                        <Draggable draggableId={item.id} index={index} key={item.id}>
+                                            {(provided, snapshot) => (
+                                                <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                                                    <Todo item={item}  dispatch={dispatch} lightTheme={lightTheme} />
+                                                </div>
+                                            )}
+                                        </Draggable>
+                                    )                    
+                                })
+                        }                           
                         {provided.placeholder}
                     </div>
                 )}            
@@ -62,7 +62,7 @@ const List = ({list,completedToDo,clearCompleted,removeToDo,lightTheme}) => {
                     <div className={`active ${activeState === 'active' ? 'activeState' : false}`} onClick={()=>setActiveState('active')}>Active</div>
                     <div className={`completed ${activeState === 'completed' ? 'activeState' : false}`} onClick={()=>setActiveState('completed')}>Completed</div>
                 </div>
-                <div className="app__clearCompleted" onClick={clearCompleted}>Clear Completed</div>
+                <div className="app__clearCompleted" onClick={()=>dispatch({type:'clearCompleted'})}>Clear Completed</div>
             </div>
         </div>
     )
