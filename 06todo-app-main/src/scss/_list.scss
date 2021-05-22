@@ -21,17 +21,13 @@
   }
 
   #{&}__emptylist {
-    height: 40vh;
+    height: 25vh;
+    @include centerElement;
   }
 
   .todo__list {
     height: 80%;
     overflow: auto;
-  }
-
-  .emptyList {
-    @include centerElement;
-    height: 40%;
   }
 
   .todo__msg {
