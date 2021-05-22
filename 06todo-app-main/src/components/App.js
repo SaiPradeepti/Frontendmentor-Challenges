@@ -3,6 +3,7 @@ import { reducer } from './reducer'
 import '../scss/main.scss'
 import Input from './Input'
 import List from './List'
+import Alert from './Alert'
 import { DragDropContext } from 'react-beautiful-dnd';
 
 const setLocalStorage = (list) => {
@@ -19,7 +20,10 @@ const getLocalStorage = () => {
 
 const initialState = {
   list: getLocalStorage(),
-  lightTheme: false
+  lightTheme: false,
+  showAlert: false,
+  alertContent: '',
+  alertColor: ''
 }
 
 const App = () => {
@@ -44,6 +48,9 @@ const App = () => {
           setLocalStorage(state.list);
           console.log(param);
         }}>
+        {
+          <Alert dispatch={dispatch} content={state.alertContent} color={state.alertColor} showAlert={state.showAlert}/>
+        }
         <div className="app__header">
           <div className="app__title">todo</div>
           <div className="app__darkTheme" onClick={()=>dispatch({type:'toggleLightTheme'})}>

@@ -33,7 +33,6 @@ const List = ({dispatch,list,lightTheme}) => {
         setItemsLeft(count);
     }, [list])
     
-    // if(newList.length!==0)
     return (
         <div className={`app__list ${lightTheme ? 'app__light' : false} ${newList.length===0 ? 'app__emptylist': false}`}>
             {
