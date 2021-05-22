@@ -6,8 +6,8 @@ This is a solution to the [Todo app challenge on Frontend Mentor](https://www.fr
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
   - [Links](#links)
+  - [Screenshot](#screenshot)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [Useful resources](#useful-resources)
@@ -29,6 +29,11 @@ Users should be able to:
 - Toggle light and dark mode
 - Drag and drop to reorder items on the list
 
+### Links
+
+- Solution URL: [Solution](https://github.com/SaiPradeepti/Frontendmentor-Challenges/tree/main/06todo-app-main)
+- Live Site URL: [Live Site](https://todo-app-main-saipradeepti.netlify.app/)
+
 ### Screenshots
 
 | DarkTheme                      |           LightTheme           |
@@ -36,11 +41,6 @@ Users should be able to:
 | ![](./src/images/Capture1.PNG) | ![](./src/images/Capture2.PNG) |
 | ![](./src/images/Capture3.PNG) | ![](./src/images/Capture4.PNG) |
 | ![](./src/images/Capture5.PNG) | ![](./src/images/Capture6.PNG) |
-
-### Links
-
-- Solution URL: [Solution](https://github.com/SaiPradeepti/Frontendmentor-Challenges/tree/main/06todo-app-main)
-- Live Site URL: [Live Site](https://todo-app-main-saipradeepti.netlify.app/)
 
 ## My process
 
