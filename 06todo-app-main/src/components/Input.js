@@ -1,7 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
 const Input = ({dispatch,lightTheme}) => {
+    const inputRef = useRef(null); 
     const [todo,setTodo] = useState('');
+
+    // Focusing cursor on input field on page load
+    useEffect(() => {
+     inputRef.current.focus();   
+    });
+
+
     const handleSubmit = (e) => {
         e.preventDefault();
         if(todo !== '')
@@ -15,7 +23,7 @@ const Input = ({dispatch,lightTheme}) => {
                     <div className='button__wrapper'>
                         <div className='button'></div>       
                     </div>   
-                    <input type="text" name='todo' value={todo} onChange={(e)=>setTodo(e.target.value)} placeholder='Create a new todo...' autoComplete="off" />
+                    <input type="text" name='todo' value={todo} onChange={(e)=>setTodo(e.target.value)} placeholder='Create a new todo...' autoComplete="off" ref={inputRef}/>
                 </div>
             </form>
         </div>

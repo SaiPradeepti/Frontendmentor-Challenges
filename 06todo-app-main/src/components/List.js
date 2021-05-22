@@ -37,8 +37,8 @@ const List = ({dispatch,list,lightTheme}) => {
     return (
         <div className={`app__list ${lightTheme ? 'app__light' : false} ${newList.length===0 ? 'app__emptylist': false}`}>
             {
-                (newList.length===0) && <div className='todo__msg'>Add items to the list!</div>
-            }
+                (list.length===0) && <div className='todo__msg'>Add items to the list!</div>
+            }              
             {                
                 (newList.length!==0) &&                 
                 <Droppable droppableId="droppable">
@@ -60,7 +60,7 @@ const List = ({dispatch,list,lightTheme}) => {
                         </div>
                     )}            
                 </Droppable>               
-            }
+            }   
             <div className="app__menu">
                         <div className="app__listItems">{itemsLeft} items left</div>
                         <div className="app__states">
