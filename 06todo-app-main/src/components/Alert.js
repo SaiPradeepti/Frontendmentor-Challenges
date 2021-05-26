@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react'
+import { useGlobalContext } from './context'
 
-const Alert = ({dispatch,content,color,showAlert}) => {
+const Alert = () => {
+    const { dispatch,alertContent,alertColor,showAlert } = useGlobalContext();
+
     const alert = () => {
         setTimeout(()=>{
             dispatch({type:'hideAlert'});
@@ -19,7 +22,7 @@ const Alert = ({dispatch,content,color,showAlert}) => {
     return (
         <div className='alert'>
            {
-               showAlert && <div className="alert__content" style={{color: `${color}`}}>{content}</div>
+               showAlert && <div className="alert__content" style={{color: `${alertColor}`}}>{alertContent}</div>
            }
         </div>
     )

@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react'
+import { useGlobalContext } from './context'
 
-const Input = ({dispatch,lightTheme}) => {
+const Input = () => {
+    const { dispatch,lightTheme } = useGlobalContext();
     const inputRef = useRef(null); 
     const [todo,setTodo] = useState('');
 

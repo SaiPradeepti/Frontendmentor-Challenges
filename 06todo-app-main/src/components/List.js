@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import Todo from './Todo'
 import { Droppable, Draggable } from 'react-beautiful-dnd';
+import { useGlobalContext } from './context'
 
-const List = ({dispatch,list,lightTheme}) => {
+const List = () => {
+  const { dispatch, list,lightTheme } = useGlobalContext();
     const [newList,setNewList] = useState(list);
     const [itemsLeft,setItemsLeft] = useState(0);
     const [activeState,setActiveState] = useState('all');
