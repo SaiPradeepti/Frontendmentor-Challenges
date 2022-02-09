@@ -50,7 +50,7 @@ Users should be able to:
 - CSS custom properties
 - Flexbox
 - SASS
-- React
+- React.js
 - LocalStorage - For retaining Todo List
 - [react-beautiful-dnd](https://github.com/atlassian/react-beautiful-dnd) - Drag and Drop for React
 

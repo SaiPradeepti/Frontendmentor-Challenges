@@ -11,16 +11,16 @@ const getLocalStorage = () => {
     return [];
 }
 
+const setLocalStorage = (list) => {
+  localStorage.setItem('list',JSON.stringify(list));
+}
+
 const initialState = {
   list: getLocalStorage(),
   lightTheme: false,
   showAlert: false,
   alertContent: '',
   alertColor: ''
-}
-
-const setLocalStorage = (list) => {
-  localStorage.setItem('list',JSON.stringify(list));
 }
 
 export const AppContextProvider = ({children}) => {
