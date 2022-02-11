@@ -13,8 +13,10 @@ $font-family: "Nunito Sans", sans-serif;
 
 // font-size
 $font-size: (
-  "homepage-items": 14px,
-  "detail-page": 16px,
+  "smaller": 15px,
+  "small": 20px,
+  "regular": 25px,
+  "large": 30px,
 );
 
 // font-weight
@@ -26,6 +28,33 @@ $font-weight: (
 
 // screen-width
 $screen-width: (
-  "mobile": 375px,
-  "desktop": 1440px,
+  "small": 640px,
+  "medium": 1007px,
+  "large": 1440px,
 );
+
+// flex
+@mixin flex($flexDirection: row, $justifyContent: center) {
+  display: flex;
+  flex-direction: $flexDirection;
+  align-items: center;
+  justify-content: $justifyContent;
+}
+
+// responsive design
+@mixin mobile {
+  @media screen and (max-width: map-get($screen-width,small)) {
+    @content;
+  }
+}
+
+@mixin tab {
+  @media screen and (max-width: map-get($screen-width,medium)) {
+    @content;
+  }
+}
+
+.fade {
+  opacity: 1;
+  transition: opacity 300ms cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}

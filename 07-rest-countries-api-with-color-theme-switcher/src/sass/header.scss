@@ -1,0 +1,57 @@
+@import "_base.scss";
+
+.nav {
+  @include flex($justifyContent: space-between);
+  padding: 2rem 8rem;
+  background: $white;
+
+  #{&}__title {
+    font-size: map-get($font-size, regular);
+    font-weight: map-get($font-weight, medium);
+
+    @include tab {
+      font-size: map-get($font-size, small);
+      font-weight: map-get($font-weight, medium);
+    }
+
+    @include mobile {
+      font-size: map-get($font-size, smaller);
+      // font-weight: map-get($font-weight, medium);
+    }
+  }
+
+  #{&}__theme {
+    @include flex;
+    gap: 1rem;
+    font-size: 20px;
+
+    @include tab {
+      font-size: 16px;
+    }
+
+    @include mobile {
+      font-size: 14px;
+    }
+
+    .theme__icon {
+      transition: all 0.2s ease;
+    }
+
+    .theme__icon:hover {
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+
+    .theme__title {
+      opacity: 0;
+    }
+  }
+
+  @include tab {
+    padding: 2rem 3rem;
+  }
+
+  @include mobile {
+    padding: 1.5rem 1rem;
+  }
+}
