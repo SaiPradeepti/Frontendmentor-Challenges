@@ -53,3 +53,8 @@ $screen-width: (
     @content;
   }
 }
+
+@mixin displayFlex {
+  display: flex;
+  flex-direction: column;
+}

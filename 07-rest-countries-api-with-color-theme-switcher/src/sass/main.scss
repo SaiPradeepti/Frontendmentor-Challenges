@@ -1,0 +1,52 @@
+@import "_base.scss";
+
+.main {
+  padding: 4rem 7rem;
+  background: $very-light-gray;
+
+  #{&}__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: 300px;
+    gap: 5rem;
+  }
+}
+
+.card {
+  background: $white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  min-width: 250px;
+
+  #{&}__img {
+    width: 100%;
+    height: 50%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  #{&}__info {
+    @include displayFlex;
+    gap: 1rem;
+    padding: 1.5rem;
+    text-transform: capitalize;
+  }
+
+  #{&}__name {
+    font-weight: map-get($font-weight, bold);
+  }
+
+  .country__info {
+    font-weight: map-get($font-weight, medium);
+    font-size: map-get($font-size, smaller);
+    @include displayFlex;
+    gap: 0.5rem;
+
+    .countryInfovalue {
+      font-weight: map-get($font-weight, regular);
+    }
+  }
+}
