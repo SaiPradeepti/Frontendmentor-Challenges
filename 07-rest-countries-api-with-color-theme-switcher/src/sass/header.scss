@@ -9,6 +9,8 @@
   @include flex($justifyContent: space-between);
   padding: 2rem 8rem;
   @include backgroundTheme;
+  z-index: 10;
+  box-shadow: $boxShadow;
 
   #{&}__title {
     font-size: map-get($font-size, regular);

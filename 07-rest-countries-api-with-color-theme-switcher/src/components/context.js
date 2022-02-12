@@ -5,6 +5,7 @@ const AppContext = React.createContext();
 const url = 'https://restcountries.com/v2/all';
 
 const initialSate = {
+  loading: true,
   data: [],
   theme: 'light',
   fadeProp: 'false'
@@ -16,13 +17,17 @@ const AppProvider = ({children}) => {
 const fetchData = async () => {
   const res = await fetch(url);
   const jsonData = await res.json();
-  dispatch({type: 'setData',payload: jsonData})  
+  dispatch({type: 'setData',payload: jsonData}) 
+  dispatch({type: 'setLoading'}) 
 }
 
 useEffect(() => {
     fetchData();
     console.log(state.data)
 },[])
+useEffect(() => {
+    console.log(state.loading)
+},[state.loading])
 
 return(
     <AppContext.Provider value={{state, dispatch}}>

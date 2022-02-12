@@ -5,6 +5,10 @@ export const reducer = (state, action) => {
             return {
                 ...state, data: newData
             }
+        case 'setLoading':
+            return{
+                ...state, loading: false
+            }
         case 'themeChange': 
             console.log(state.theme)
             const newTheme = (state.theme === 'light') ? 'dark' : 'light'            

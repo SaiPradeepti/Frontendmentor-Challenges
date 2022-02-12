@@ -8,14 +8,14 @@ import Country from './components/Country'
 
 const App = () => {
   return (
-    <>           
+    <div className='app'>           
       <Header />
       <Routes>
         <Route path='/' element={<Main />}>
           <Route path='/country/:id' element={<Country />} />  
         </Route>        
       </Routes>
-    </>
+    </div>
   )
 }
 
