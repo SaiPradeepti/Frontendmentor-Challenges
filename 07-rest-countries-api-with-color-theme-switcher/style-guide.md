@@ -39,3 +39,12 @@ Some suggestions can be found below:
 - [Font Awesome](https://fontawesome.com)
 - [IcoMoon](https://icomoon.io)
 - [Ionicons](https://ionicons.com)
+
+
+<!-- -----------
+
+lazy load the pictures
+pagination
+fade in - fade out effect for dark/light mode text
+
+--------------------->
