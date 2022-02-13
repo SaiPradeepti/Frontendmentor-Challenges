@@ -1,0 +1,82 @@
+@import "_base.scss";
+
+.search {
+  box-shadow: $boxShadow !important;
+  position: relative;
+  z-index: 10;
+  width: 40vw;
+
+  #{&}__icon {
+    position: absolute;
+    top: 35%;
+    left: 4%;
+  }
+
+  input[type="text"] {
+    padding: 1rem 3rem;
+    font-size: map-get($font-size, smaller);
+    width: 100%;
+    border: none;
+    outline: none;
+
+    @include tab {
+      padding: 1rem 3rem;
+    }
+    @include mobile {
+      padding: 1rem 3rem;
+    }
+  }
+
+  @media screen and (max-width: 542px) {
+    width: 100%;
+  }
+  @media screen and (max-width: 350px) {
+    width: 250px;
+  }
+}
+
+.dropdown {
+  #{&}__btn {
+    font-size: map-get($font-size, smaller);
+    padding: 0.5rem 1rem;
+    @include displayFlex($direction: row);
+    gap: 1.5rem;
+    box-shadow: $boxShadow;
+    justify-content: baseline;
+    align-items: baseline;
+    cursor: pointer;
+    position: relative;
+    background: $white;
+    width: 200px;
+
+    .btnicon {
+      font-weight: map-get($font-weight, bold);
+      font-size: 20px;
+    }
+  }
+
+  #{&}__content {
+    position: absolute;
+    width: 200px;
+    box-shadow: $boxShadow;
+    opacity: 0;
+  }
+
+  #{&}__value {
+    padding: 0.5rem 1rem;
+    background: $white;
+    cursor: pointer;
+
+    &:hover {
+      border: $border;
+    }
+  }
+
+  @media screen and (max-width: 542px) {
+    // width: 100%;
+  }
+}
+
+.dropdown:hover .dropdown__content {
+  opacity: 1;
+}

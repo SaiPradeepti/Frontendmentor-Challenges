@@ -8,7 +8,9 @@ const initialSate = {
   loading: true,
   data: [],
   theme: 'light',
-  fadeProp: 'false'
+  fadeProp: 'false',
+  regionFilter: '',
+  dropdownContent: []
 }
 
 const AppProvider = ({children}) => {
@@ -19,6 +21,7 @@ const fetchData = async () => {
   const jsonData = await res.json();
   dispatch({type: 'setData',payload: jsonData}) 
   dispatch({type: 'setLoading'}) 
+  dispatch({type: 'setDropdownContent'}) 
 }
 
 useEffect(() => {
@@ -27,7 +30,12 @@ useEffect(() => {
 },[])
 useEffect(() => {
     console.log(state.loading)
+  // dispatch({type: 'setDropdownContent'}) 
 },[state.loading])
+
+useEffect(() => {
+  dispatch({type: 'filterData',payload:state.regionFilter})
+},[state.regionFilter])
 
 return(
     <AppContext.Provider value={{state, dispatch}}>
