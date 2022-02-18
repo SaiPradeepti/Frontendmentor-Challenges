@@ -7,8 +7,10 @@ const url = 'https://restcountries.com/v2/all';
 const initialSate = {
   loading: true,
   data: [],
+  displayData: [],
   theme: 'light',
-  fadeProp: 'false',
+  fadeProp: false,
+  inputFilter: '',
   regionFilter: '',
   dropdownContent: []
 }
@@ -20,6 +22,7 @@ const fetchData = async () => {
   const res = await fetch(url);
   const jsonData = await res.json();
   dispatch({type: 'setData',payload: jsonData}) 
+  dispatch({type: 'setDisplayData'}) 
   dispatch({type: 'setLoading'}) 
   dispatch({type: 'setDropdownContent'}) 
 }
@@ -34,8 +37,12 @@ useEffect(() => {
 },[state.loading])
 
 useEffect(() => {
-  dispatch({type: 'filterData',payload:state.regionFilter})
+  dispatch({type: 'filterData'})
 },[state.regionFilter])
+
+useEffect(() => {
+   dispatch({type: 'filterData'})
+},[state.inputFilter])
 
 return(
     <AppContext.Provider value={{state, dispatch}}>

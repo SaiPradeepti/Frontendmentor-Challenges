@@ -17,8 +17,8 @@ const Main = () => {
       <div className="filter__container">
         <Filters />
       </div>
-      <div className="card__container">        
-        {state.data.map((item) => {
+      <div className={`card__container ${state.displayData.length < 4 ? 'medium' : ''}`}>        
+        {state.displayData.map((item) => {
           const {name, flags: {png:img}, population, region, capital, numericCode:id} = item;
           
           return (

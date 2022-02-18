@@ -5,6 +5,10 @@ export const reducer = (state, action) => {
             return {
                 ...state, data: newData
             }
+        case 'setDisplayData':
+            return{
+                ...state, displayData: state.data
+            }
         case 'setLoading':
             return{
                 ...state, loading: false
@@ -24,10 +28,61 @@ export const reducer = (state, action) => {
             return {
                 ...state, theme: newTheme
             }
-        case 'filterData':
-            const filteredData = state.data.filter(item => item.region === action.payload)
+        case 'setInputFilter':
             return{
-                ...state, data: filteredData
+                ...state, inputFilter: action.payload
+            }
+        // case 'inputFilterData':
+        //         let inputFilteredData;
+        //         const regEx = new RegExp(state.inputFilter, 'i')
+            
+        //     if(state.inputFilter !== '')
+        //         inputFilteredData = state.displayData.filter(item => {                    
+        //             if(state.regionFilter !== '')                    
+        //                 return regEx.test(item.name) === true
+        //             else
+        //                 return regEx.test(item.name) === true
+        //         })
+
+        //     else
+        //         inputFilteredData = state.data;
+        //     return {
+        //         ...state, displayData: inputFilteredData
+        //     }
+        // case 'dropDownFilterData':
+        //     let dropDownfilteredData;
+        //     if(state.regionFilter !== 'All')
+        //         dropDownfilteredData = state.data.filter(item => item.region === state.regionFilter)
+        //     else
+        //         dropDownfilteredData = state.data
+        //     console.log(dropDownfilteredData)
+        //     return{
+        //         ...state, displayData: dropDownfilteredData
+        //     }
+        case 'filterData':
+            let filteredData;
+            const regEx = new RegExp(state.inputFilter, 'i')
+            if (state.regionFilter === ''){
+                if(state.inputFilter === '')
+                    filteredData = state.data;
+                else
+                    filteredData = state.data.filter(item => regEx.test(item.name) === true)
+            }
+            else if (state.regionFilter === 'All'){
+                if(state.inputFilter === '')
+                    filteredData = state.data;
+                else
+                    filteredData = state.data.filter(item => regEx.test(item.name) === true)
+            }
+            else if(state.regionFilter !== 'All'){
+                if(state.inputFilter === '')
+                    filteredData = state.data.filter(item => item.region === state.regionFilter )
+                else
+                    filteredData = state.data.filter(item => (item.region === state.regionFilter && regEx.test(item.name) === true))
+            }
+            
+            return {
+                ...state, displayData: filteredData
             }
         default:
             return { ...state }

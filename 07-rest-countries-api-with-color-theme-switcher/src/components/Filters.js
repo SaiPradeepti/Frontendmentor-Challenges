@@ -14,12 +14,20 @@ const Filters = () => {
               <div className="search__icon">
                 <FaSearch />
               </div>
-              <input type="text" placeholder='search for country...' className='search__text'/>
+              <input type="text" placeholder='search for country...' className='search__text' onChange={(e) => {
+                  dispatch({type:'setInputFilter',payload:e.target.value})
+                  e.preventDefault();
+              }}/>
             </form>
         </div>          
         <div className="dropdown">
             <div className="dropdown__btn">
-                <div className="btncontent">Filter by Region</div>
+                {
+                    (state.regionFilter !== '') && <div className="btncontent">{state.regionFilter}</div>
+                }
+                {
+                    (state.regionFilter === '') && <div className="btncontent">Filter by Region</div>
+                }
                 <div className="btnicon"><AiOutlineCaretDown /></div>
             </div>
             <div className="dropdown__content">

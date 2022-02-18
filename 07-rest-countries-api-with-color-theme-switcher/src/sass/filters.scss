@@ -41,6 +41,7 @@
     padding: 0.5rem 1rem;
     @include displayFlex($direction: row);
     gap: 1.5rem;
+    justify-content: space-between;
     box-shadow: $boxShadow;
     justify-content: baseline;
     align-items: baseline;
