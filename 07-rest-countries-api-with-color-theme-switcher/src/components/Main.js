@@ -2,9 +2,15 @@ import React from 'react'
 import '../sass/main.scss'
 import { useGlobalcontext } from './context'
 import Filters from './Filters';
+import {Navigate, useNavigate} from 'react-router-dom'
 
 const Main = () => {
   const {state, dispatch} = useGlobalcontext();
+    const navigate = useNavigate();
+
+  const handleNavigate = (id) => {
+    const navigatePage = navigate(`/country/${id}`)
+  }
 
   if(state.loading) {
     return <div className='loading'>
@@ -22,7 +28,7 @@ const Main = () => {
           const {name, flags: {png:img}, population, region, capital, numericCode:id} = item;
           
           return (
-            <div className="card" key={id}>
+            <div className="card" key={id} onClick={() => handleNavigate(id)}>
               <div className="card__img">
                 <img src={img} alt={name} />
               </div>

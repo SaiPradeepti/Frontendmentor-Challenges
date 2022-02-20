@@ -13,6 +13,7 @@
   box-shadow: $boxShadow;
 
   #{&}__title {
+    cursor: pointer;
     font-size: map-get($font-size, regular);
     font-weight: map-get($font-weight, medium);
 
