@@ -57,6 +57,10 @@ export const reducer = (state, action) => {
             return {
                 ...state, displayData: filteredData
             }
+        case 'setCountryInfoID':
+            return {
+                ...state, countryInfoID: action.payload.id
+            }
         case 'setCountryInfo':
             const newCountryInfo = state.data.filter(item => {
                 if(parseInt(item.numericCode) === parseInt(action.payload.id)){
@@ -93,8 +97,7 @@ export const reducer = (state, action) => {
                                 id: 1
                             }
                 newBorderCountries.push(newItem)
-            }    
-            console.log(state.countryInfo[0])
+            }  
             return{
                 ...state, languageNames: langNames, borderCountries: newBorderCountries
             }

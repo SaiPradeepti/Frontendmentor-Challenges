@@ -10,6 +10,7 @@ const Main = () => {
 
   const handleNavigate = (id) => {
     const navigatePage = navigate(`/country/${id}`)
+    dispatch({type: 'setCountryInfoID', payload: {id}})
   }
 
   if(state.loading) {

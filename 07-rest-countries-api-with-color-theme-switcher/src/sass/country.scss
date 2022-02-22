@@ -88,4 +88,8 @@
   #{&}__icon {
     font-weight: map-get($font-weight, bold);
   }
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }

@@ -13,6 +13,7 @@ const initialSate = {
   inputFilter: '',
   regionFilter: '',
   dropdownContent: [],
+  countryInfoID: null,
   countryInfo: [],
   languageNames: '',
   borderCountries: []

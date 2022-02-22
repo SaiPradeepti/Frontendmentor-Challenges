@@ -9,24 +9,34 @@ const Country = () => {
   const {id} = useParams();
   const navigate = useNavigate();
 
-  const handleNavigate = () => {
-    const navigatePage = navigate('/')
+  const handleHomeNavigate = () => {
+    const navigateHomePage = navigate('/')
+  }
+
+  // const handleClick = (id) => {
+  //   dispatch
+  // }
+
+  const handleCountryNavigate = (id) => {
+    const navigateCountryPage = navigate(`/country/${id}`)
+    dispatch({type: 'setCountryInfoID', payload: {id}})
   }
 
   useEffect(() => {
     dispatch({type: 'setCountryInfo',payload: {id}})
     dispatch({type: 'setCountryDetails'})
-  },[])
+    handleCountryNavigate(id)
+  },[id])
   
   return (
     <div className='country'>
-      <div className="btn" onClick={() => handleNavigate()}>
+      <div className="btn" onClick={() => handleHomeNavigate()}>
         <div className="btn__icon"><BsArrowLeft/></div>
         <div className="btn__text">Back</div>
       </div>
         {
           state.countryInfo.map(item => {
-              const {name, flags: {svg: img}, nativeName, population, region, subregion, capital, topLevelDomain, currencies: {name: currency}, numericCode:id} = item;
+              const {name, flags: {svg: img}, nativeName, population, region, subregion, capital, topLevelDomain, currencies, numericCode:id} = item;
               return <div className="country__info" key={id}>
                 <div className="country__img">
                   <img src={img} alt={name} />
@@ -43,7 +53,7 @@ const Country = () => {
                       </div>
                       <div className="country__details2">
                         <div><b>topLevelDomain:</b> {topLevelDomain[0]}</div>
-                        <div><b>currencies:</b> {currency}</div>
+                        <div><b>currencies:</b> {currencies[0].name}</div>
                         <div><b>languages:</b> {state.languageNames}</div>
                       </div>
                   </div>
@@ -53,7 +63,13 @@ const Country = () => {
                       {
                       state.borderCountries.map(item => {
                         const {id,name} = item;
-                        return (<div className='border' key={id}>{name}</div>)
+                        return (<div className='border' key={id} onClick={() => {
+                            if(name !== 'No Borders'){
+                              dispatch({type: 'setCountryInfoID', payload: {id}})
+                            handleCountryNavigate(id)
+                            }
+                          }
+                        }>{name}</div>)
                       })
                     }
                     </div>
