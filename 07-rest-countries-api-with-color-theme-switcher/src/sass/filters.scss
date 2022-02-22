@@ -37,17 +37,8 @@
 
 .dropdown {
   #{&}__btn {
-    font-size: map-get($font-size, smaller);
-    padding: 0.5rem 1rem;
-    @include displayFlex($direction: row);
+    @include btn;
     gap: 1.5rem;
-    justify-content: space-between;
-    box-shadow: $boxShadow;
-    justify-content: baseline;
-    align-items: baseline;
-    cursor: pointer;
-    position: relative;
-    background: $white;
     width: 200px;
 
     .btnicon {
@@ -60,7 +51,7 @@
     position: absolute;
     width: 200px;
     box-shadow: $boxShadow;
-    opacity: 0;
+    visibility: hidden;
   }
 
   #{&}__value {
@@ -79,5 +70,5 @@
 }
 
 .dropdown:hover .dropdown__content {
-  opacity: 1;
+  visibility: visible;
 }

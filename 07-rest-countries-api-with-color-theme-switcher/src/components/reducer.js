@@ -32,33 +32,6 @@ export const reducer = (state, action) => {
             return{
                 ...state, inputFilter: action.payload
             }
-        // case 'inputFilterData':
-        //         let inputFilteredData;
-        //         const regEx = new RegExp(state.inputFilter, 'i')
-            
-        //     if(state.inputFilter !== '')
-        //         inputFilteredData = state.displayData.filter(item => {                    
-        //             if(state.regionFilter !== '')                    
-        //                 return regEx.test(item.name) === true
-        //             else
-        //                 return regEx.test(item.name) === true
-        //         })
-
-        //     else
-        //         inputFilteredData = state.data;
-        //     return {
-        //         ...state, displayData: inputFilteredData
-        //     }
-        // case 'dropDownFilterData':
-        //     let dropDownfilteredData;
-        //     if(state.regionFilter !== 'All')
-        //         dropDownfilteredData = state.data.filter(item => item.region === state.regionFilter)
-        //     else
-        //         dropDownfilteredData = state.data
-        //     console.log(dropDownfilteredData)
-        //     return{
-        //         ...state, displayData: dropDownfilteredData
-        //     }
         case 'filterData':
             let filteredData;
             const regEx = new RegExp(state.inputFilter, 'i')
@@ -83,6 +56,47 @@ export const reducer = (state, action) => {
             
             return {
                 ...state, displayData: filteredData
+            }
+        case 'setCountryInfo':
+            const newCountryInfo = state.data.filter(item => {
+                if(parseInt(item.numericCode) === parseInt(action.payload.id)){
+                    return item
+                }
+                else
+                    return;
+            })
+            return{
+                ...state, countryInfo: newCountryInfo
+            }
+        case 'setCountryDetails':
+            let langNames = state.countryInfo[0].languages.map(item => item.name);
+            langNames = langNames.join(', ');          
+            let newBorderCountries = [];  
+            if(state.countryInfo[0].borders){
+                const tempArr = state.countryInfo[0].borders.map(item1 => {
+                state.data.filter(item2 => {
+                    if (item1 === item2.alpha3Code)
+                        {
+                            let newItem  = {
+                                name: item2.name,
+                                id: item2.numericCode
+                            }
+                            newBorderCountries.push(newItem)
+                            return item2.name;
+                        }
+                })
+            });
+            }        
+            else{
+                let newItem  = {
+                                name: 'No Borders',
+                                id: 1
+                            }
+                newBorderCountries.push(newItem)
+            }    
+            console.log(state.countryInfo[0])
+            return{
+                ...state, languageNames: langNames, borderCountries: newBorderCountries
             }
         default:
             return { ...state }

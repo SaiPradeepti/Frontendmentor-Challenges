@@ -7,9 +7,6 @@ import {useNavigate} from 'react-router-dom'
 const Header = () => {
   const {state, dispatch} = useGlobalcontext();
   const navigate = useNavigate();
-  useEffect(() => {
-    console.log('theme change')
-  },[])
 
   return (
     <nav className={`nav ${state.theme === 'dark'? 'darkTheme' : ''}`}>

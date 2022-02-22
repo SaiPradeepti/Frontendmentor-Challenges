@@ -62,3 +62,15 @@ $screen-width: (
   display: flex;
   flex-direction: $direction;
 }
+
+@mixin btn {
+  font-size: map-get($font-size, smaller);
+  padding: 0.5rem 1rem;
+  @include displayFlex($direction: row);
+  justify-content: space-between;
+  box-shadow: $boxShadow;
+  align-items: baseline;
+  cursor: pointer;
+  position: relative;
+  background: $white;
+}

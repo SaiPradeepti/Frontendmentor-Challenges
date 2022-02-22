@@ -12,7 +12,10 @@ const initialSate = {
   fadeProp: false,
   inputFilter: '',
   regionFilter: '',
-  dropdownContent: []
+  dropdownContent: [],
+  countryInfo: [],
+  languageNames: '',
+  borderCountries: []
 }
 
 const AppProvider = ({children}) => {
@@ -29,12 +32,8 @@ const fetchData = async () => {
 
 useEffect(() => {
     fetchData();
-    console.log(state.data)
 },[])
-useEffect(() => {
-    console.log(state.loading)
-  // dispatch({type: 'setDropdownContent'}) 
-},[state.loading])
+
 
 useEffect(() => {
   dispatch({type: 'filterData'})
