@@ -97,7 +97,7 @@ export const reducer = (state, action) => {
                                 id: 1
                             }
                 newBorderCountries.push(newItem)
-            }  
+            }    
             return{
                 ...state, languageNames: langNames, borderCountries: newBorderCountries
             }

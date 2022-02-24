@@ -74,3 +74,8 @@ $screen-width: (
   position: relative;
   background: $white;
 }
+
+@mixin backgroundTheme($background: $white, $textColor: $very-dark-blue) {
+  background: $background;
+  color: $textColor;
+}

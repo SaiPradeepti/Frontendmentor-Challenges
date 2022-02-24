@@ -3,6 +3,7 @@ import {Routes, Route} from 'react-router-dom'
 import Header from './components/Header'
 import Main from './components/Main'
 import Country from './components/Country'
+import NotFound from './components/NotFound'
 
 
 
@@ -13,6 +14,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Main />}/>
         <Route path='/country/:id' element={<Country />} />  
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </div>
   )

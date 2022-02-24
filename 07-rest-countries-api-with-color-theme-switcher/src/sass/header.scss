@@ -1,9 +1,9 @@
 @import "_base.scss";
 
-@mixin backgroundTheme($background: $white, $textColor: $very-dark-blue) {
-  background: $background;
-  color: $textColor;
-}
+// @mixin backgroundTheme($background: $white, $textColor: $very-dark-blue) {
+//   background: $background;
+//   color: $textColor;
+// }
 
 .nav {
   @include flex($justifyContent: space-between);

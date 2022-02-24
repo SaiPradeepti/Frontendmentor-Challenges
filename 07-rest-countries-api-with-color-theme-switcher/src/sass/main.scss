@@ -64,6 +64,7 @@
   background: $white;
   box-shadow: $boxShadow;
   min-width: 250px;
+  cursor: pointer;
 
   #{&}__img {
     width: 100%;
@@ -108,4 +109,21 @@
 
 .medium {
   grid-template-columns: repeat(auto-fit, 200px);
+}
+
+.darkTheme {
+  @include backgroundTheme(#2b3945, $very-light-gray);
+}
+
+.notfound {
+  @include flex($flexDirection: column);
+  padding-top: 10vh;
+
+  .btn {
+    margin-top: 2rem;
+    padding: 1rem;
+    width: 200px;
+    border: 1px solid rgb(218, 216, 216);
+    border-radius: 15px;
+  }
 }

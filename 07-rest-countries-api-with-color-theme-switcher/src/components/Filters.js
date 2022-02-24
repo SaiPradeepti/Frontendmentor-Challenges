@@ -14,7 +14,7 @@ const Filters = () => {
               <div className="search__icon">
                 <FaSearch />
               </div>
-              <input type="text" placeholder='search for country...' className='search__text' onChange={(e) => {
+              <input type="text" value={state.inputFilter} placeholder='search for country...' className='search__text' onChange={(e) => {
                   dispatch({type:'setInputFilter',payload:e.target.value})
                   e.preventDefault();
               }}/>

@@ -13,20 +13,38 @@ const Country = () => {
     const navigateHomePage = navigate('/')
   }
 
-  // const handleClick = (id) => {
-  //   dispatch
-  // }
-
   const handleCountryNavigate = (id) => {
     const navigateCountryPage = navigate(`/country/${id}`)
-    dispatch({type: 'setCountryInfoID', payload: {id}})
   }
 
+  useEffect(() => {    
+    handleCountryNavigate(id);    
+  },[])  
+
   useEffect(() => {
-    dispatch({type: 'setCountryInfo',payload: {id}})
-    dispatch({type: 'setCountryDetails'})
-    handleCountryNavigate(id)
-  },[id])
+    dispatch({type: 'setCountryInfoID', payload: {id}})
+  },[id])  
+  
+  useEffect(() => {
+    if(!state.loading){
+    dispatch({type: 'setCountryInfo',payload: {id: parseInt(state.countryInfoID)}});
+    dispatch({type: 'setCountryDetails'});
+    } 
+  },[id,state.countryInfoID,state.loading])  
+
+  useEffect(() => {
+    if(state.countryInfoID === null){      
+    const newArr = window.location.href.split('/') 
+    console.log(newArr[newArr.length-1])
+    dispatch({type: 'setCountryInfoID', payload:{id: newArr[newArr.length-1]}})
+    }
+  },[state.loading])
+
+  if(state.loading) {    
+    return <div className='loading'>
+      <div>Loading....</div>
+    </div>
+  }  
   
   return (
     <div className='country'>

@@ -20,7 +20,7 @@ const Main = () => {
   }
   
   return (
-    <main className="main">
+    <main className={`main ${state.theme === 'dark'? 'darkTheme': ''}`}>
       <div className="filter__container">
         <Filters />
       </div>
@@ -29,7 +29,7 @@ const Main = () => {
           const {name, flags: {png:img}, population, region, capital, numericCode:id} = item;
           
           return (
-            <div className="card" key={id} onClick={() => handleNavigate(id)}>
+            <div className={`card ${state.theme === 'dark'? 'darkTheme': ''}`} key={id} onClick={() => handleNavigate(id)}>
               <div className="card__img">
                 <img src={img} alt={name} />
               </div>
