@@ -56,19 +56,24 @@
 
   #{&}__value {
     padding: 0.5rem 1rem;
-    background: $white;
+    // background: $white;
     cursor: pointer;
 
     &:hover {
       border: $border;
     }
   }
-
-  @media screen and (max-width: 542px) {
-    // width: 100%;
-  }
 }
 
 .dropdown:hover .dropdown__content {
   visibility: visible;
+}
+
+.light {
+  background: $white;
+}
+
+.dark {
+  background: #2b3945;
+  box-shadow: none !important;
 }

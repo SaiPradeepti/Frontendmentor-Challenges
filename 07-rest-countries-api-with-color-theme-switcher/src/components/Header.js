@@ -8,8 +8,12 @@ const Header = () => {
   const {state, dispatch} = useGlobalcontext();
   const navigate = useNavigate();
 
+  useEffect(()=>{
+    dispatch({type: 'checkTheme'})
+  },[])
+
   return (
-    <nav className={`nav ${state.theme === 'dark'? 'darkTheme' : ''}`}>
+    <nav className={`nav ${state.theme === 'dark'? 'lightGrey' : ''}`}>
         <div className="nav__title" onClick={() => navigate('/')}>Where in the world?</div>
         <div className="nav__theme">
         {

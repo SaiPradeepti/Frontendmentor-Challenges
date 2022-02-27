@@ -72,10 +72,20 @@ $screen-width: (
   align-items: baseline;
   cursor: pointer;
   position: relative;
-  background: $white;
 }
 
 @mixin backgroundTheme($background: $white, $textColor: $very-dark-blue) {
   background: $background;
   color: $textColor;
+}
+
+.lightGrey {
+  background: #2b3945;
+  color: $white;
+  box-shadow: none !important;
+}
+.darkGrey {
+  background: #202c37 !important;
+  color: $white;
+  box-shadow: none;
 }

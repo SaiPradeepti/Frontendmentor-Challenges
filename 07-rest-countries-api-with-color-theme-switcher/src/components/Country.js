@@ -1,6 +1,6 @@
 import React, {useEffect } from 'react'
 import { useGlobalcontext } from './context'
-import { useParams, Outlet, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import '../sass/country.scss'
 import {BsArrowLeft} from 'react-icons/bs'
 
@@ -32,23 +32,15 @@ const Country = () => {
     } 
   },[id,state.countryInfoID,state.loading])  
 
-  useEffect(() => {
-    if(state.countryInfoID === null){      
-    const newArr = window.location.href.split('/') 
-    console.log(newArr[newArr.length-1])
-    dispatch({type: 'setCountryInfoID', payload:{id: newArr[newArr.length-1]}})
-    }
-  },[state.loading])
-
   if(state.loading) {    
-    return <div className='loading'>
+    return <div className={`loading ${state.theme === 'dark'? 'darkGrey': ''}`}>
       <div>Loading....</div>
     </div>
-  }  
-  
+  } 
+
   return (
-    <div className='country'>
-      <div className="btn" onClick={() => handleHomeNavigate()}>
+    <div className={`country ${state.theme === 'dark'? 'darkGrey' : ''}`}>
+      <div className={`btn ${state.theme === 'dark'? 'lightGrey' : ''}`} onClick={() => handleHomeNavigate()}>
         <div className="btn__icon"><BsArrowLeft/></div>
         <div className="btn__text">Back</div>
       </div>
@@ -81,7 +73,7 @@ const Country = () => {
                       {
                       state.borderCountries.map(item => {
                         const {id,name} = item;
-                        return (<div className='border' key={id} onClick={() => {
+                        return (<div className={`border ${state.theme === 'dark'? 'lightGrey' : ''}`} key={id} onClick={() => {
                             if(name !== 'No Borders'){
                               dispatch({type: 'setCountryInfoID', payload: {id}})
                             handleCountryNavigate(id)

@@ -43,6 +43,10 @@
   #{&}__name {
     font-size: map-get($font-size, large);
     font-weight: map-get($font-weight, medium);
+
+    @include mobile {
+      font-size: map-get($font-size, regular);
+    }
   }
 
   #{&}__details {
@@ -51,6 +55,7 @@
     gap: 2rem;
 
     @include mobile {
+      margin-top: 1.5rem;
       @include displayFlex;
       gap: 1rem;
     }
@@ -61,6 +66,10 @@
     @include displayFlex;
     gap: 1rem;
     text-transform: capitalize;
+
+    @include mobile {
+      font-size: map-get($font-size, smaller);
+    }
   }
 
   #{&}__borders {
@@ -68,12 +77,22 @@
     display: flex;
     align-items: baseline;
     gap: 1rem;
+
+    @include mobile {
+      margin-top: 2rem;
+      display: block;
+    }
   }
 
   #{&}__border {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+
+    @include mobile {
+      padding-top: 1rem;
+      font-size: map-get($font-size, smaller);
+    }
   }
 }
 

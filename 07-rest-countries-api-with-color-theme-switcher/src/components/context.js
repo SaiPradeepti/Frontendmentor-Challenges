@@ -7,6 +7,7 @@ const url = 'https://restcountries.com/v2/all';
 const initialSate = {
   loading: true,
   data: [],
+  IDs: [],
   displayData: [],
   theme: 'light',
   fadeProp: false,
@@ -27,6 +28,7 @@ const fetchData = async () => {
   const jsonData = await res.json();
   dispatch({type: 'setData',payload: jsonData}) 
   dispatch({type: 'setDisplayData'}) 
+  dispatch({type: 'setIDs'}) 
   dispatch({type: 'setLoading'}) 
   dispatch({type: 'setDropdownContent'}) 
 }

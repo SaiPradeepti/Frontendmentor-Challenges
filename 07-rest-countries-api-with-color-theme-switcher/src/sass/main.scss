@@ -111,10 +111,6 @@
   grid-template-columns: repeat(auto-fit, 200px);
 }
 
-.darkTheme {
-  @include backgroundTheme(#2b3945, $very-light-gray);
-}
-
 .notfound {
   @include flex($flexDirection: column);
   padding-top: 10vh;
@@ -127,3 +123,5 @@
     border-radius: 15px;
   }
 }
+
+// #2B3945

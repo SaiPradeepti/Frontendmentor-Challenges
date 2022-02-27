@@ -9,19 +9,19 @@ const Filters = () => {
 
   return (
     <>
-        <div className="search">
+        <div className={`search ${state.theme === 'dark'? 'dark' : ''}`}>
             <form>
               <div className="search__icon">
                 <FaSearch />
               </div>
-              <input type="text" value={state.inputFilter} placeholder='search for country...' className='search__text' onChange={(e) => {
+              <input type="text" value={state.inputFilter} placeholder='search for country...' className={`search__text ${state.theme === 'dark'? 'dark' : ''}`} onChange={(e) => {
                   dispatch({type:'setInputFilter',payload:e.target.value})
                   e.preventDefault();
               }}/>
             </form>
         </div>          
-        <div className="dropdown">
-            <div className="dropdown__btn">
+        <div className={`dropdown ${state.theme === 'dark'? 'dark' : ''}`}>
+            <div className={`dropdown__btn ${state.theme === 'dark'? 'dark' : ''}`}>
                 {
                     (state.regionFilter !== '') && <div className="btncontent">{state.regionFilter}</div>
                 }
@@ -30,7 +30,7 @@ const Filters = () => {
                 }
                 <div className="btnicon"><AiOutlineCaretDown /></div>
             </div>
-            <div className="dropdown__content">
+            <div className={`dropdown__content ${state.theme === 'dark'? 'dark' : 'light'}`}>
                 {
                     state.dropdownContent.map((item,index) => {
                         return(

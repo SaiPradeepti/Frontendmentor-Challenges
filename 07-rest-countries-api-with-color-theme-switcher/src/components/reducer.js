@@ -1,5 +1,10 @@
 export const reducer = (state, action) => {
     switch(action.type){
+        case 'checkTheme':
+            const existingTheme = localStorage.getItem('theme');
+            return{
+                ...state, theme: existingTheme
+            }
         case 'setData' : 
             const newData = action.payload;
             return {
@@ -8,6 +13,11 @@ export const reducer = (state, action) => {
         case 'setDisplayData':
             return{
                 ...state, displayData: state.data
+            }
+        case 'setIDs':
+            let idArr = state.data.map(item => parseInt(item.numericCode));
+            return {
+                ...state, IDs: idArr
             }
         case 'setLoading':
             return{
@@ -24,7 +34,8 @@ export const reducer = (state, action) => {
             }
         case 'themeChange': 
             console.log(state.theme)
-            const newTheme = (state.theme === 'light') ? 'dark' : 'light'            
+            const newTheme = (state.theme === 'light') ? 'dark' : 'light'  
+            localStorage.setItem('theme',newTheme)          
             return {
                 ...state, theme: newTheme
             }
