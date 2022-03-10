@@ -1,5 +1,9 @@
 @import "_base.scss";
 
+* {
+  box-sizing: border-box;
+}
+
 .loading {
   flex: 1 1 auto;
   @include displayFlex;
@@ -64,7 +68,7 @@
   background: $white;
   box-shadow: $boxShadow;
   min-width: 250px;
-  cursor: pointer;
+  padding-bottom: 1rem;
 
   #{&}__img {
     width: 100%;

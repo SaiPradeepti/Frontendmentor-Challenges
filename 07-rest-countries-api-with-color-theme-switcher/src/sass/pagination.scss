@@ -1,0 +1,28 @@
+@import "_base.scss";
+
+.pagination {
+  @include displayFlex($direction: row);
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding-bottom: 2rem;
+  background: $very-light-gray;
+  font-size: map-get($font-size, smaller);
+
+  #{&}__item {
+    border: 1px solid rgb(189, 189, 189);
+    padding: 0.6rem;
+    border-radius: 10px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.activePage {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background: #eeeeee;
+  background: #ffffff;
+  border: 2px solid rgb(83, 83, 83) !important;
+}

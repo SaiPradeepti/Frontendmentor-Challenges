@@ -17,7 +17,10 @@ const initialSate = {
   countryInfoID: null,
   countryInfo: [],
   languageNames: '',
-  borderCountries: []
+  borderCountries: [],
+  itemsPerPage: 20,
+  numberOfPages: [],
+  pageSelected: 1
 }
 
 const AppProvider = ({children}) => {
@@ -31,11 +34,16 @@ const fetchData = async () => {
   dispatch({type: 'setIDs'}) 
   dispatch({type: 'setLoading'}) 
   dispatch({type: 'setDropdownContent'}) 
+  dispatch({type: 'setNumberOfPages'}) 
 }
 
 useEffect(() => {
     fetchData();
 },[])
+
+useEffect(() => {
+   dispatch({type: 'setDisplayData'}) 
+},[state.pageSelected])
 
 
 useEffect(() => {

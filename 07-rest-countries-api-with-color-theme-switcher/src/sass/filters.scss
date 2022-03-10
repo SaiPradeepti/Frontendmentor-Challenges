@@ -40,6 +40,7 @@
     @include btn;
     gap: 1.5rem;
     width: 200px;
+    background: white;
 
     .btnicon {
       font-weight: map-get($font-weight, bold);

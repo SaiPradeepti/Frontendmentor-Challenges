@@ -11,8 +11,12 @@ export const reducer = (state, action) => {
                 ...state, data: newData
             }
         case 'setDisplayData':
+            const index = state.pageSelected;
+            const newDisplayData = state.data.slice((index-1)*20,index*20);
+            console.log((index-1)*20,index*20)
+            console.log(newDisplayData.length)
             return{
-                ...state, displayData: state.data
+                ...state, displayData: newDisplayData
             }
         case 'setIDs':
             let idArr = state.data.map(item => parseInt(item.numericCode));
@@ -111,6 +115,16 @@ export const reducer = (state, action) => {
             }    
             return{
                 ...state, languageNames: langNames, borderCountries: newBorderCountries
+            }
+        case 'setNumberOfPages':
+            const numberOfPages = Math.ceil(state.data.length / state.itemsPerPage);
+            return{
+                ...state, numberOfPages
+            }
+        case 'setPageSelected':
+            const newPage = action.payload.item;
+            return {
+                ...state,pageSelected: newPage
             }
         default:
             return { ...state }
