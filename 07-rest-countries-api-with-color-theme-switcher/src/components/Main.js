@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../sass/main.scss'
 import { useGlobalcontext } from './context'
 import Filters from './Filters';
@@ -24,14 +24,14 @@ const Main = () => {
       <div className="filter__container">
         <Filters />
       </div>
-      <div className={`card__container ${state.displayData.length < 4 ? 'medium' : ''}`}>        
+      <div className={`card__container ${state.displayData.length < 4 ? 'medium' : ''}`} style={state.displayData.length === 0 ? {height:'63vh'} : {}}>        
         {state.displayData.map((item) => {
           const {name, flags: {png:img}, population, region, capital, numericCode:id} = item;
           
-          return (
+          return (            
             <div className={`card ${state.theme === 'dark'? 'lightGrey': ''}`} key={id} onClick={() => handleNavigate(id)}>
               <div className="card__img">
-                <img src={img} alt={name} />
+                <img src={img} alt={name} effect='blur' />
               </div>
               <div className="card__info">
                 <div className='card__name'>{name}</div>

@@ -10,11 +10,16 @@ export const reducer = (state, action) => {
             return {
                 ...state, data: newData
             }
+        // case 'setDisplayData': //used while implementing pagination
+        //     const index = state.pageSelected;
+        //     const newDisplayData = state.data.slice((index-1)*20,index*20);
+        //     console.log((index-1)*20,index*20)
+        //     console.log(newDisplayData.length)
+        //     return{
+        //         ...state, displayData: newDisplayData
+        //     }
         case 'setDisplayData':
-            const index = state.pageSelected;
-            const newDisplayData = state.data.slice((index-1)*20,index*20);
-            console.log((index-1)*20,index*20)
-            console.log(newDisplayData.length)
+            const newDisplayData = state.data.slice(0,state.numberOfItems)
             return{
                 ...state, displayData: newDisplayData
             }

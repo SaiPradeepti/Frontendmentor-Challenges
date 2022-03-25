@@ -43,7 +43,7 @@ useEffect(() => {
 
 useEffect(() => {
    dispatch({type: 'setDisplayData'}) 
-},[state.pageSelected])
+},[])
 
 
 useEffect(() => {
