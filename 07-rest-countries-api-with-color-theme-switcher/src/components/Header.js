@@ -17,13 +17,13 @@ const Header = () => {
         <div className="nav__title" onClick={() => navigate('/')}>Where in the world?</div>
         <div className="nav__theme">
         {
-          (state.theme === 'light') && <div className="theme__icon" onClick={() => dispatch({type: 'themeChange'})}><FaRegMoon/></div>
+          (state.theme === 'light'|| state.theme === null) && <div className="theme__icon" onClick={() => dispatch({type: 'themeChange'})}><FaRegMoon/></div>
         }
         {
           (state.theme === 'dark') && <div className="theme__icon" onClick={() => dispatch({type: 'themeChange'})}><FaMoon/></div>
         }
         {
-          (state.theme === 'light') && <div className="theme__title">Dark Mode</div>
+          (state.theme === 'light' || state.theme === null) && <div className="theme__title">Dark Mode</div>
         }
         {
           (state.theme === 'dark') && <div className="theme__title">Light Mode</div>
