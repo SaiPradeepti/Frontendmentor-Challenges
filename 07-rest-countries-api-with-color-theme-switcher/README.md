@@ -33,11 +33,11 @@ Users should be able to:
 
 ### Screenshot
 
-| DarkTheme                      |           LightTheme           |
+| LightTheme                      |           DarkTheme           |
 | :----------------------------- | :----------------------------: |
 | ![](./src/images/myProjectImages/img1-light.png) | ![](./src/images/myProjectImages/img1-dark.png) |
-| ![](./src/images/myProjectImages/img2-light.png) | ![](./src/images/myProjectImages/img2-dark.png) |
 | ![](./src/images/myProjectImages/img3-light.png) | ![](./src/images/myProjectImages/img3-dark.png) |
+| ![](./src/images/myProjectImages/img2-ight.png) | ![](./src/images/myProjectImages/img2-dark.png) |
 
 ### Links
 
