@@ -16,8 +16,6 @@ This is a solution to the [REST Countries API with color theme switcher challeng
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -31,6 +29,11 @@ Users should be able to:
 - Click through to the border countries on the detail page
 - Toggle the color scheme between light and dark mode *(optional)*
 
+### Links
+
+- Solution URL: [Solution](https://github.com/SaiPradeepti/Frontendmentor-Challenges/tree/main/07-rest-countries-api-with-color-theme-switcher)
+- Live Site URL: [Live Site](https://rest-countries-api-with-color-theme-switcher-saipradeepti.netlify.app/)
+
 ### Screenshot
 
 | LightTheme                      |           DarkTheme           |
@@ -38,11 +41,6 @@ Users should be able to:
 | ![](./src/images/myProjectImages/img1-light.png) | ![](./src/images/myProjectImages/img1-dark.png) |
 | ![](./src/images/myProjectImages/img3-light.png) | ![](./src/images/myProjectImages/img3-dark.png) |
 | ![](./src/images/myProjectImages/img2-ight.png) | ![](./src/images/myProjectImages/img2-dark.png) |
-
-### Links
-
-- Solution URL: [Add solution URL here](https://github.com/SaiPradeepti/Frontendmentor-Challenges/tree/main/07-rest-countries-api-with-color-theme-switcher)
-- Live Site URL: [Add live site URL here](https://rest-countries-api-with-color-theme-switcher-saipradeepti.netlify.app/)
 
 ## My process
 
