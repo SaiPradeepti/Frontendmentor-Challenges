@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import '../sass/main.scss'
 import { useGlobalcontext } from './context'
 import Filters from './Filters';
+import Skeleton from './Skeleton';
 import {Navigate, useNavigate} from 'react-router-dom'
 
 const Main = () => {
@@ -13,11 +14,17 @@ const Main = () => {
     dispatch({type: 'setCountryInfoID', payload: {id}})
   }
 
+  //   if(state.loading) {
+  //   return <div className={`loading ${state.theme === 'dark'? 'darkGrey': ''}`}>
+  //     <div>Loading....</div>
+  //   </div>
+  // }
+
   if(state.loading) {
-    return <div className={`loading ${state.theme === 'dark'? 'darkGrey': ''}`}>
-      <div>Loading....</div>
+    return <div className={`${state.theme === 'dark'? 'darkGrey': ''}`}>
+      <Skeleton />
     </div>
-  }
+  }    
   
   return (
     <main className={`main ${state.theme === 'dark'? 'darkGrey': ''}`}>
@@ -31,7 +38,7 @@ const Main = () => {
           return (            
             <div className={`card ${state.theme === 'dark'? 'lightGrey': ''}`} key={id} onClick={() => handleNavigate(id)}>
               <div className="card__img">
-                <img src={img} alt={name} effect='blur' />
+                <img src={img} alt={name} />
               </div>
               <div className="card__info">
                 <div className='card__name'>{name}</div>
@@ -46,7 +53,8 @@ const Main = () => {
         })}
       </div>
     </main>
-  )
+  ) 
+  
 }
 
 export default Main

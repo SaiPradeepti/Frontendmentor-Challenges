@@ -36,6 +36,7 @@
 .main {
   padding: 3rem 7rem;
   background: $very-light-gray;
+  // transition: all 0.5s ease;
 
   @include tab {
     padding: 3rem 4rem;
@@ -127,4 +128,12 @@
     border: 1px solid rgb(218, 216, 216);
     border-radius: 15px;
   }
+}
+
+.lightSkeleton {
+  background: #2b3945;
+}
+
+.darkSkeleton {
+  background: #202c37 !important;
 }
