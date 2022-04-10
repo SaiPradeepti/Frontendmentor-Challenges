@@ -13,14 +13,14 @@ const Skeleton = () => {
                     
           return (
               <>         
-            <div className={`skeleton ${state.theme === 'dark'? 'darkGrey': ''}`} key={index}>
-              <div className={`skeleton__img ${state.theme === 'dark'? '.darkSkeleton': ''}`}></div>
+            <div className={`skeleton ${state.theme === 'dark'? 'darkSkeleton': ''}`} key={index}>
+              <div className={`skeleton__img ${state.theme === 'dark'? 'darkSubSkeleton': ''}`}></div>
               <div className="skeleton__info">
-                <div className='skeleton__empty'></div>
-                <div className='skeleton__empty'></div>
-                <div className='skeleton__empty'></div>
+                <div className={`skeleton__empty ${state.theme === 'dark'? 'darkSubSkeleton': ''}`}></div>
+                <div className={`skeleton__empty ${state.theme === 'dark'? 'darkSubSkeleton': ''}`}></div>
+                <div className={`skeleton__empty ${state.theme === 'dark'? 'darkSubSkeleton': ''}`}></div>
               </div>
-              <div className="loadingAnimation"></div>
+              <div className={`loadingAnimation ${state.theme === 'dark'? 'darkAnimation': ''}`}></div>
             </div>    
             </>
           )
