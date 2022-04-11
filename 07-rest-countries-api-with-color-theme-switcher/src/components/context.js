@@ -18,7 +18,7 @@ const initialSate = {
   countryInfo: [],
   languageNames: '',
   borderCountries: [],
-  itemsPerPage: 20,
+  numbDisplayItems: 10,
   numberOfPages: [],
   pageSelected: 1
 }
@@ -43,7 +43,7 @@ useEffect(() => {
 
 useEffect(() => {
    dispatch({type: 'setDisplayData'}) 
-},[])
+},[state.numbDisplayItems])
 
 
 useEffect(() => {

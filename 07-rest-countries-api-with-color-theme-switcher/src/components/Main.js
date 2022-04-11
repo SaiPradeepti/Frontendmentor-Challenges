@@ -20,6 +20,17 @@ const Main = () => {
   //   </div>
   // }
 
+  const event = () => {
+    if (window.innerHeight + window.scrollY >= document.body.scrollHeight) {
+      dispatch({type: 'setNumbDisplayItems'})
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', event);
+    return () => window.removeEventListener('scroll', event);
+  }, []);
+
   if(state.loading) {
     return <div className={`${state.theme === 'dark'? 'darkGrey': ''}`}>
       <Skeleton />

@@ -11,8 +11,7 @@ const Skeleton = () => {
       <div className='skeleton__container'>
         {dummyArr.map((item,index) => {
                     
-          return (
-              <>         
+          return (      
             <div className={`skeleton ${state.theme === 'dark'? 'darkSkeleton': ''}`} key={index}>
               <div className={`skeleton__img ${state.theme === 'dark'? 'darkSubSkeleton': ''}`}></div>
               <div className="skeleton__info">
@@ -21,8 +20,7 @@ const Skeleton = () => {
                 <div className={`skeleton__empty ${state.theme === 'dark'? 'darkSubSkeleton': ''}`}></div>
               </div>
               <div className={`loadingAnimation ${state.theme === 'dark'? 'darkAnimation': ''}`}></div>
-            </div>    
-            </>
+            </div> 
           )
         })}
       </div>
