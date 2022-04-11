@@ -19,7 +19,7 @@ export const reducer = (state, action) => {
         //         ...state, displayData: newDisplayData
         //     }
         case 'setDisplayData':
-            const newDisplayData = state.data.slice(0,state.numberOfItems)
+            const newDisplayData = state.data.slice(0,state.numbDisplayItems)
             return{
                 ...state, displayData: newDisplayData
             }
@@ -130,6 +130,11 @@ export const reducer = (state, action) => {
             const newPage = action.payload.item;
             return {
                 ...state,pageSelected: newPage
+            }
+        case 'setNumbDisplayItems':
+            const newNumbDisplayItems = state.numbDisplayItems + 15;
+            return {
+                ...state,numbDisplayItems: newNumbDisplayItems
             }
         default:
             return { ...state }
